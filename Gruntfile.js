@@ -3,6 +3,9 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		jshint: {
+			all: ['Gruntfile.js', 'src/js/**/*.js']
+		},
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -93,9 +96,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify', 'concat', 'jade', 'less', 'copy']);
+	grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'jade', 'less', 'copy']);
 
 };

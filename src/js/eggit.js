@@ -1,8 +1,7 @@
 
 var app = app || {};
 
-var settings = {
-
+app.settings = {
 	soft: {
 		prep: {
 			title: 'SOFT BOILED EGG',
@@ -29,7 +28,7 @@ var settings = {
 		},
 		end: {
 			title: 'CONGRATZZ!',
-			desc: 'You should now have a very good boiled egg, but no promises ;)'
+			desc: 'You should now have a very good boiled egg, but no promises ;)',
 			btnlabel: 'RESET'
 		}
 	},
@@ -46,8 +45,7 @@ var settings = {
 		rinse: {},
 		wait: {},
 		end: {}
-	},
-
+	}
 };
 
 $(function() {
@@ -58,5 +56,5 @@ $(function() {
 	app.model = new app.EggitModel();
 	app.view = new app.EggitView();
 	
-	app.model.step('start');
+	app.model.set({currentStep: 'start'});
 });

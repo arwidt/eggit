@@ -6,6 +6,7 @@ var app = app || {};
 
 	app.EggitView = Backbone.View.extend({
 		el: '',
+		timeVisual: null,
 		
 		initialize: function() {
 			var that = this;
@@ -14,7 +15,8 @@ var app = app || {};
 			this.el = $('#apparea');
 			this.initTemplates();
 
-			this.listenTo(app.model, 'change:currentStep', that.render);
+			this.listenTo(app.model, 'change:currentStep', that.change_currentStep);
+			this.listenTo(app.model, 'change:time', that.change_time);
 		},
 
 		initTemplates: function() {
@@ -25,52 +27,51 @@ var app = app || {};
 				$("#template_boil")];
 		},
 
-		render: function() {
-			console.log('render');
+		change_currentStep: function() {
 			switch(app.model.get('currentStep')) {
 				case 'start':
 					this.el.html(this.templates[0].html());
 					$('#soft').click(function(){
-						app.model.set({boilTime: 3000,
-										rinseTime: 3000,
-										waitTime: 3000,
-										step1Title: 'SOFT BOILED',
-										step1Desc: 'This is how you boil the perfect soft egg. The best kind.',
-										step1Btn: 'NEXT',
-										currentStep: 1});
+						app.model.set({
+							typeData: app.settings.soft,
+							currentStep: 'prep'});
 					});
 					$('#medium').click(function(){
-						app.model.set({boilTime: 4000,
-										rinseTime: 4000,
-										waitTime: 4000,
-										step1Title: 'MEDIUM BOILED',
-										step1Desc: 'This is how you boil the perfect medium egg.',
-										step1Btn: 'NEXT',
-										currentStep: 1});
 					});
 					$('#hard').click(function(){
-						app.model.set({boilTime: 4000,
-										rinseTime: 4000,
-										waitTime: 4000,
-										step1Title: 'HARD BOILED',
-										step1Desc: 'This is how you boil the perfect hard egg.',
-										step1Btn: 'NEXT',
-										currentStep: 1});
 					});
 					break;
 				case 'prep':
 					console.log(app.model.attributes);
-					this.el.html(_.template(this.templates[1].html(), app.model.attributes));
+					this.el.html(
+						_.template(this.templates[1].html(),
+						app.model.get('typeData').prep));
 
 					$('.step1 .btn').click(function() {
-						console.log("step1");
+						app.model.set({currentStep: 'boil'});
+						app.model.start_time(app.model.get('typeData').boil.time);
 					});
+
+					this.timeVisual = $('#timeVisual');
+
+
 					break;
 				case 'boil':
 					console.log(app.model.attributes);
-					this.el.html(_.template(this.templates[2].html()));
+					this.el.html(
+						_.template(this.templates[2].html(),
+						app.model.get('typeData').boil));
 					break;
 			}
+		},
+
+		change_time: function() {
+
+		},
+
+		render: function() {
+			console.log('render');
+
 		}
 
 	});

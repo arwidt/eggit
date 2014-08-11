@@ -19,5 +19,37 @@ script(type=["text/template"] id=["template_boil"])
 			h2 <%= title %>
 			p <%= desc %>
 		div(class=['col-md-6'])
+			p#timeVisual 00:00
+		button(type="button", class="btn btn-default") <%= btnlabel %>
+
+script(type=["text/template"] id=["template_rinse"])
+	div(class=['step1 col-md-12'])
+		div(class=['col-md-6'])
+			h2 <%= title %>
+			p <%= desc %>
+		div(class=['col-md-6'])
 			p 00:00
 		button(type="button", class="btn btn-default") <%= btnlabel %>
+
+script(type=["text/template"] id=["template_wait"])
+	div(class=['step1 col-md-12'])
+		div(class=['col-md-6'])
+			h2 <%= title %>
+			p <%= desc %>
+		div(class=['col-md-6'])
+			p 00:00
+		button(type="button", class="btn btn-default") <%= btnlabel %>
+
+script(type=["text/template"] id=["template_end"])
+	div(class=['step1 col-md-12'])
+		div(class=['col-md-6'])
+			h2 <%= title %>
+			p <%= desc %>
+		div(class=['col-md-6'])
+			p 00:00
+		button(type="button", class="btn btn-default") <%= btnlabel %>
+
+
+
+
+
