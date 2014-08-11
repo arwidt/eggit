@@ -1,0 +1,23 @@
+
+script(type=["text/template"] id=["template_start"])
+	div(class=['hidden-xs col-sm-2 col-md-2'])
+	div(class=['col-xs-12 col-sm-8 col-md-8'])
+		div#soft(class=['col-xs-4'])
+		div#medium(class=['col-xs-4'])
+		div#hard(class=['col-xs-4'])
+	div(class=['hidden-xs col-sm-2 col-md-2'])
+
+script(type=["text/template"] id=["template_prep"])
+	div(class=['step1 col-md-12'])
+		h2 <%= title %>
+		p <%= desc %>
+		button(type="button", class="btn btn-default") <%= btnlabel %>
+
+script(type=["text/template"] id=["template_boil"])
+	div(class=['step1 col-md-12'])
+		div(class=['col-md-6'])
+			h2 <%= title %>
+			p <%= desc %>
+		div(class=['col-md-6'])
+			p 00:00
+		button(type="button", class="btn btn-default") <%= btnlabel %>
