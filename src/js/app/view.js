@@ -31,7 +31,10 @@ var app = app || {};
 		change_currentStep: function() {
 			switch(app.model.get('currentStep')) {
 				case 'start':
+					this.el.transition({opacity: 0, scale: 0.8}, 0);
 					this.el.html(this.templates.start.html());
+					this.el.transition({opacity: 1, scale: 1}, 1000);
+
 					$('#soft').click(function(){
 						app.model.set({
 							typeData: app.settings.soft,

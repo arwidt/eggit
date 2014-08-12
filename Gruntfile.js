@@ -20,8 +20,9 @@ module.exports = function(grunt) {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
-			build: {
+			lib: {
 				src: ['node_modules/jquery/dist/jquery.min.js',
+				'node_modules/jquery.transit/jquery.transit.js',
 				'node_modules/underscore/underscore-min.js',
 				'node_modules/bootstrap/dist/js/bootstrap.min.js',
 				'node_modules/backbone/backbone-min.js'],
@@ -97,7 +98,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'jade', 'less', 'copy']);
