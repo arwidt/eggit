@@ -70,7 +70,13 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					{expand: false, src: ['node_modules/bootstrap/dist/css/bootstrap.min.css'], dest: 'build/css/bootstrap.min.css'}
+					{expand: false, src: ['node_modules/bootstrap/dist/css/bootstrap.min.css'], dest: 'build/css/bootstrap.min.css'},
+					{expand: true,
+						cwd: 'src/gfx/',
+						src: '**',
+						dest: 'build/gfx/',
+						flatten: true,
+						filter: 'isFile'}
 				]
 			}
 		},
