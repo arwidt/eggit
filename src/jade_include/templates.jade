@@ -13,24 +13,23 @@ script(type=["text/template"] id=["template_start"])
 	div(class=['hidden-xs hidden-sm col-md-1'])
 
 script(type=["text/template"] id=["template_prep"])
-	div(class=['step_prep col-md-12'])
-		h2 <%= title %>
+	div(class=['hidden-xs col-sm-6 debug_red'])
+		img(class=[''] src=['gfx/pot.png'])
+	div(class=['col-xs-12 col-sm-6 step_prep'])
 		p <%= desc %>
-		button(type="button", class="btn btn-default") <%= btnlabel %>
+		button(type="button" class=["btn btn-default btn-block"]) <%= btnlabel %>
 
 script(type=["text/template"] id=["template_boil"])
 	div(class=['step_boil col-md-12'])
 		div(class=['col-md-6'])
-			h2 <%= title %>
 			p <%= desc %>
 		div(class=['col-md-6'])
 			p#timeVisual 00:00
-		button(type="button", class="btn btn-default") <%= btnlabel %>
+		button(type="button", class="btn btn-default btn-block") <%= btnlabel %>
 
 script(type=["text/template"] id=["template_rinse"])
 	div(class=['step_rinse col-md-12'])
 		div(class=['col-md-6'])
-			h2 <%= title %>
 			p <%= desc %>
 		div(class=['col-md-6'])
 			p#timeVisual 00:00
@@ -39,7 +38,6 @@ script(type=["text/template"] id=["template_rinse"])
 script(type=["text/template"] id=["template_wait"])
 	div(class=['step_wait col-md-12'])
 		div(class=['col-md-6'])
-			h2 <%= title %>
 			p <%= desc %>
 		div(class=['col-md-6'])
 			p#timeVisual 00:00
@@ -48,7 +46,6 @@ script(type=["text/template"] id=["template_wait"])
 script(type=["text/template"] id=["template_end"])
 	div(class=['step_end col-md-12'])
 		div(class=['col-md-6'])
-			h2 <%= title %>
 			p <%= desc %>
 		button(type="button", class="btn btn-default") <%= btnlabel %>
 

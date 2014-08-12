@@ -1,16 +1,5 @@
-@textcolor: #FFFFFF;
-@gfxUrl: '../gfx/';
-
-.bluegradient {
-	background: #15316b; /* Old browsers */
-	background: -moz-linear-gradient(top,  #15316b 0%, #2f4e91 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#15316b), color-stop(100%,#2f4e91)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #15316b 0%,#2f4e91 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #15316b 0%,#2f4e91 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #15316b 0%,#2f4e91 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #15316b 0%,#2f4e91 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15316b', endColorstr='#2f4e91',GradientType=0 ); /* IE6-9 */
-}
+@import 'vars.less';
+@import 'bootstrap_overrides.less';
 
 * {
 	margin: 0;
@@ -27,7 +16,7 @@ body {
 
 	/* Font */
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
+	font-weight: 500;
 	color: #FFFFFF;
 	font-size: 10px;
 	text-rendering: optimizeLegibility;
@@ -43,11 +32,10 @@ a {
 	color: #00B7FF;
 }
 
-h1 {
-	color: #FFFFFF;
-	font-size: 80px;
-	margin: bottom 10px;
-	font-family: 'Sniglet', cursive;
+.step_prep p {
+	//font-style: italic;
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
 
 .centered {
@@ -69,18 +57,26 @@ h1 {
 	}
 }
 
-#top h1 {
-	text-align: center;
+#top {
+	.centered;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
 #softbtn {
-	//background-color: #555;
+	cursor: pointer;
 }
 
 #mediumbtn {
-	//background-color: #777;
+	cursor: pointer;
 }
 
 #hardbtn {
-	//background-color: #333;
+	cursor: pointer;
 }
+
+.debug_red {
+	background-color: #FF0000;
+}
+.debug_blue { background-color: #0000FF; }
+.debug_green { background-color: #00FF00; }
