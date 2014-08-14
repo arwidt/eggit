@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 			lib: {
 				src: ['node_modules/jquery/dist/jquery.min.js',
 				'node_modules/jquery.transit/jquery.transit.js',
+				'libs/jquery.fittext.js',
 				'node_modules/underscore/underscore-min.js',
 				'node_modules/bootstrap/dist/js/bootstrap.min.js',
 				'node_modules/backbone/backbone-min.js'],

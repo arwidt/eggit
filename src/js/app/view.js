@@ -7,11 +7,19 @@ var app = app || {};
 	app.EggitView = Backbone.View.extend({
 		el: '',
 		timeVisual: null,
+		bottom_btn: null,
 		
 		initialize: function() {
 			var that = this;
 
 			this.el = $('#apparea');
+			this.bottom_btn = $('.bottom_btn');
+			this.bottom_btn.transition({opacity: 0, y: 10}, 0);
+			$(this.bottom_btn).find('button').click(function() {
+				app.model.stop_time();
+				app.model.set({currentStep: 'start'});
+			});
+
 			this.initTemplates();
 
 			this.listenTo(app.model, 'change:currentStep', that.change_currentStep);
@@ -30,10 +38,16 @@ var app = app || {};
 
 		change_currentStep: function() {
 			var that = this;
+			var typeData;
 			switch(app.model.get('currentStep')) {
 				case 'start':
+					this.hide_bottom_btn();
 					this.el.transition({opacity: 0, x: 10}, function() {
-						that.el.html(that.templates.start.html());
+						typeData = app.model.get('typeData').start;
+						that.el.html(
+							_.template(that.templates.start.html(),
+							typeData));
+
 						$('#softbtn').click(function(){
 							app.model.set({
 								typeData: app.settings.soft,
@@ -81,13 +95,12 @@ var app = app || {};
 					}).transition({opacity: 1, x: 0}, 500);
 					break;
 				case 'prep':
-					console.log(app.model.attributes);
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
-						console.log(that);
+						typeData = app.model.get('typeData').prep;
 						that.el.css({x: 10});
 						that.el.html(
 							_.template(that.templates.prep.html(),
-							app.model.get('typeData').prep));
+							typeData));
 
 						$('.step_prep .btn').click(function() {
 							app.model.set({currentStep: 'boil'});
@@ -96,15 +109,17 @@ var app = app || {};
 					}).transition({opacity: 1, x: 0}, 500);
 					break;
 				case 'boil':
-					console.log(app.model.attributes);
-
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
-						console.log(that);
+						typeData = app.model.get('typeData').boil;
+						that.show_bottom_btn(typeData.btnlabel);
+
 						that.el.css({x: 10});
 						that.el.html(
 							_.template(that.templates.boil.html(),
-							app.model.get('typeData').boil));
-						that.timeVisual = $('#timeVisual');
+							typeData));
+						that.timeVisual = $('#time_visual');
+						that.update_timeVisual(app.model.get('time'));
+						that.timeVisual.fitText(0.3);
 
 						// Cancel
 						$('.step_boil .btn').click(function() {
@@ -115,16 +130,18 @@ var app = app || {};
 
 					break;
 				case 'rinse':
-					console.log(app.model.attributes);
-
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
-						console.log(that);
+						typeData = app.model.get('typeData').rinse;
+						that.show_bottom_btn(typeData.btnlabel);
+
 						that.el.css({x: 10});
 						that.el.html(
 							_.template(that.templates.rinse.html(),
-							app.model.get('typeData').rinse));
+							typeData));
 
-						that.timeVisual = $('#timeVisual');
+						that.timeVisual = $('#time_visual');
+						that.update_timeVisual(app.model.get('time'));
+						that.timeVisual.fitText(0.3);
 
 						// Cancel
 						$('.step_rinse .btn').click(function() {
@@ -135,41 +152,32 @@ var app = app || {};
 					
 					break;
 				case 'wait':
-					console.log(app.model.attributes);
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
-						console.log(that);
+						typeData = app.model.get('typeData').wait;
+						that.show_bottom_btn(typeData.btnlabel);
+
 						that.el.css({x: 10});
 						that.el.html(
 							_.template(that.templates.wait.html(),
-							app.model.get('typeData').wait));
+							typeData));
 
-						that.timeVisual = $('#timeVisual');
+						that.timeVisual = $('#time_visual');
+						that.update_timeVisual(app.model.get('time'));
+						that.timeVisual.fitText(0.3);
 
-						// Cancel
-						$('.step_wait .btn').click(function() {
-							app.model.stop_time();
-							app.model.set({currentStep: 'start'});
-						});
 					}).transition({opacity: 1, x: 0}, 500);
-
 					
 					break;
 				case 'end':
-					console.log(app.model.attributes);
-
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
-						console.log(that);
+						typeData = app.model.get('typeData').end;
+						that.show_bottom_btn(typeData.btnlabel);
+
 						that.el.css({x: 10});
 						that.el.html(
 							_.template(that.templates.end.html(),
-							app.model.get('typeData').end));
+							typeData));
 
-						that.timeVisual = $('#timeVisual');
-
-						// Reset
-						$('.step_end .btn').click(function() {
-							app.model.set({currentStep: 'start'});
-						});
 					}).transition({opacity: 1, x: 0}, 500);
 
 					break;
@@ -180,7 +188,7 @@ var app = app || {};
 			if (!this.timeVisual) return;
 
 			var time = app.model.get('time');
-			this.timeVisual.html(TimeConvert.milliseconds_to_mmss(time));
+			this.update_timeVisual(time);
 
 			if (time <= 0) {
 				switch(app.model.get('currentStep')) {
@@ -200,6 +208,23 @@ var app = app || {};
 						break;
 				}
 			}
+		},
+
+		update_timeVisual: function(time) {
+			if (this.timeVisual) {
+				var time_str = TimeConvert.milliseconds_to_mmss(time);
+				time_str = time_str.replace(":", '<span class="time_divider">:</span>');
+				this.timeVisual.html(time_str);
+			}
+		},
+
+		show_bottom_btn: function(label) {
+			this.bottom_btn.find('button').html(label);
+			this.bottom_btn.transition({delay: 500, opacity: 1, y: 0}, 500);
+		},
+
+		hide_bottom_btn: function() {
+			this.bottom_btn.transition({opacity: 0, y: 10}, 300);
 		},
 
 		render: function() {

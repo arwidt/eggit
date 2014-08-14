@@ -1,5 +1,6 @@
 @import 'vars.less';
 @import 'bootstrap_overrides.less';
+@import 'mixins.less';
 
 * {
 	margin: 0;
@@ -21,7 +22,7 @@ body {
 	font-size: 10px;
 	text-rendering: optimizeLegibility;
 
-	.bluegradient;
+	.gradient-background(@backgroundStartColor, @backgroundEndColor);
 }
 
 p {
@@ -30,12 +31,6 @@ p {
 
 a {
 	color: #00B7FF;
-}
-
-.step_prep p {
-	//font-style: italic;
-	margin-top: 10px;
-	margin-bottom: 30px;
 }
 
 .centered {
@@ -47,20 +42,40 @@ a {
 	bottom: 0;
 	width: 100%;
 	/* Set the fixed height of the footer here */
-	height: 30px;
-	background-color: #15316b;
+	height: 50px;
 	p {
-		margin-top: 8px;
+		margin-top: 15px;
 		font-size: 10px;
 		color: #DDD;
 		text-align: center;
 	}
+	.gradient-background(darken(@backgroundEndColor, 5%), @backgroundEndColor);
+}
+
+.bottom_btn {
+	position: absolute;
+	bottom: 70px;
+	width: 100%;
 }
 
 #top {
 	.centered;
+	margin-left: 10px;
 	margin-top: 40px;
 	margin-bottom: 20px;
+}
+
+#time_visual {
+	font-family: 'Sniglet', cursive;
+	font-size: 300px;
+	margin: 5%;
+
+	.text-shadow;
+
+	.time_divider {
+		position: relative;
+		top: -0.1em;
+	}
 }
 
 #softbtn {
