@@ -14,10 +14,12 @@ var app = app || {};
 
 			this.el = $('#apparea');
 			this.bottom_btn = $('.bottom_btn');
-			this.bottom_btn.transition({opacity: 0, y: 10}, 0);
+			this.bottom_btn.css({opacity: 0, y: 10});
 			$(this.bottom_btn).find('button').click(function() {
 				app.model.stop_time();
-				app.model.set({currentStep: 'start'});
+				app.model.set({
+					typeData: app.settings.start,
+					currentStep: 'start'});
 			});
 
 			this.initTemplates();
@@ -42,57 +44,63 @@ var app = app || {};
 			switch(app.model.get('currentStep')) {
 				case 'start':
 					this.hide_bottom_btn();
-					this.el.transition({opacity: 0, x: 10}, function() {
-						typeData = app.model.get('typeData').start;
-						that.el.html(
-							_.template(that.templates.start.html(),
-							typeData));
+					$.getJSON("http://thingsarerandom.com:8080/eggit/api/getEggs", function( data ) {
+						that.el.transition({opacity: 0, x: 10}, function() {
+							
+							typeData = app.model.get('typeData');
+							var insert = {desc: typeData.desc, current: typeData.current};
+							insert.current = _.template(insert.current, {boiled: data.numOfEggs});
 
-						$('#softbtn').click(function(){
-							app.model.set({
-								typeData: app.settings.soft,
-								currentStep: 'prep'});
-						});
-						$('#softbtn').hover(
-							function() {
-								$(this).stop();
-								$(this).transition({scale: 1.2}, 200);
-							},
-							function() {
-								$(this).stop();
-								$(this).transition({scale: 1}, 200);
-							});
+							that.el.html(
+								_.template(that.templates.start.html(),
+								insert));
 
-						$('#mediumbtn').click(function(){
-							app.model.set({
-								typeData: app.settings.medium,
-								currentStep: 'prep'});
-						});
-						$('#mediumbtn').hover(
-							function() {
-								$(this).stop();
-								$(this).transition({scale: 1.2}, 200);
-							},
-							function() {
-								$(this).stop();
-								$(this).transition({scale: 1}, 200);
+							$('#softbtn').click(function(){
+								app.model.set({
+									typeData: app.settings.soft,
+									currentStep: 'prep'});
 							});
+							$('#softbtn').hover(
+								function() {
+									$(this).stop();
+									$(this).transition({scale: 1.2}, 200);
+								},
+								function() {
+									$(this).stop();
+									$(this).transition({scale: 1}, 200);
+								});
 
-						$('#hardbtn').click(function(){
-							app.model.set({
-								typeData: app.settings.hard,
-								currentStep: 'prep'});
-						});
-						$('#hardbtn').hover(
-							function() {
-								$(this).stop();
-								$(this).transition({scale: 1.2}, 200);
-							},
-							function() {
-								$(this).stop();
-								$(this).transition({scale: 1}, 200);
+							$('#mediumbtn').click(function(){
+								app.model.set({
+									typeData: app.settings.medium,
+									currentStep: 'prep'});
 							});
-					}).transition({opacity: 1, x: 0}, 500);
+							$('#mediumbtn').hover(
+								function() {
+									$(this).stop();
+									$(this).transition({scale: 1.2}, 200);
+								},
+								function() {
+									$(this).stop();
+									$(this).transition({scale: 1}, 200);
+								});
+
+							$('#hardbtn').click(function(){
+								app.model.set({
+									typeData: app.settings.hard,
+									currentStep: 'prep'});
+							});
+							$('#hardbtn').hover(
+								function() {
+									$(this).stop();
+									$(this).transition({scale: 1.2}, 200);
+								},
+								function() {
+									$(this).stop();
+									$(this).transition({scale: 1}, 200);
+								});
+						}).transition({opacity: 1, x: 0}, 500);
+					});
 					break;
 				case 'prep':
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
@@ -173,6 +181,10 @@ var app = app || {};
 						typeData = app.model.get('typeData').end;
 						that.show_bottom_btn(typeData.btnlabel);
 
+						$.getJSON("http://thingsarerandom.com:8080/eggit/api/addEgg?auth=123", function( data ) {
+							console.log("currentEggs:", data);
+						});
+
 						that.el.css({x: 10});
 						that.el.html(
 							_.template(that.templates.end.html(),
@@ -230,7 +242,7 @@ var app = app || {};
 		render: function() {
 			//console.log('render');
 		}
-
+		
 	});
 
 })(jQuery);

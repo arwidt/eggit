@@ -26,6 +26,7 @@
     "backbone": "^1.1.2",
     "grunt-contrib-cssmin": "^0.10.0",
     "requirejs": "^2.1.14",
-    "jquery.transit": "^0.9.12"
+    "jquery.transit": "^0.9.12",
+    "grunt-shell": "^0.7.0"
   }
 }

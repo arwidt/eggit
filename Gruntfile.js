@@ -94,6 +94,14 @@ module.exports = function(grunt) {
 				files: 'src/**/*.jade',
 				tasks: ['jade']
 			}
+		},
+		shell: {
+			 multiple: {
+				command: [
+					'echo UPLOAD TO TAR',
+					'scp -r build/* arwidt@thingsarerandom.com:/home/arwidt/node_www/public/eggit/'
+				].join(';')
+        	}
 		}
 	});
 
@@ -106,8 +114,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-shell');
 
 	// Default task(s).
 	grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'jade', 'less', 'copy']);
+
 
 };
