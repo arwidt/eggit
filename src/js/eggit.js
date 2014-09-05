@@ -14,7 +14,7 @@ app.settings = {
 		boil: {
 			desc: 'Boil your egg the exact time given.',
 			btnlabel: 'CANCEL',
-			time: 5000
+			time: 500000
 		},
 		rinse: {
 			desc: 'Rinse your eggs in cold water until the time ends.',
@@ -87,14 +87,14 @@ $(function() {
 	'use strict';
 
 	console.log("start");
-	
+
 	app.model = new app.EggitModel();
 	app.view = new app.EggitView();
 	
 	// START
-	app.model.set({
+	/*app.model.set({
 		typeData: app.settings.start,
-		currentStep: 'start'});
+		currentStep: 'start'});*/
 	
 	// PREP
 	/*app.model.set({
@@ -102,8 +102,8 @@ $(function() {
 		currentStep: 'prep'});*/
 	
 	// BOIL
-	/*app.model.set({typeData: app.settings.soft});
+	app.model.set({typeData: app.settings.soft});
 	app.model.set({currentStep: 'boil'});
-	app.model.start_time(app.model.get('typeData').boil.time);*/
+	app.model.start_time(app.model.get('typeData').boil.time);
 	
 });

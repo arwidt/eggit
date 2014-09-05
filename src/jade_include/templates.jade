@@ -14,9 +14,9 @@ script(type=["text/template"] id=["template_start"])
 			p(class=['centered']) <%= current %>
 
 script(type=["text/template"] id=["template_prep"])
-	div(class=['hidden-xs col-sm-6 debug_red'])
-		img(class=[''] src=['gfx/pot.png'])
-	div(class=['col-xs-12 col-sm-6 step_prep'])
+	div(class=['prep_gfx col-sm-6'])
+		img(src=['gfx/pot.png'])
+	div(class=['step_prep col-xs-12 col-sm-6'])
 		p <%= desc %>
 		button(type="button" class=["btn btn-default btn-block"]) <%= btnlabel %>
 

@@ -77,7 +77,8 @@ module.exports = function(grunt) {
 						src: '**',
 						dest: 'build/gfx/',
 						flatten: true,
-						filter: 'isFile'}
+						filter: 'isFile'},
+					{expand: false, src: ['node_modules/backbone/backbone-min.map'], dest: 'build/js/backbone-min.map'},
 				]
 			}
 		},
