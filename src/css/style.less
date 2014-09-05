@@ -2,6 +2,16 @@
 @import 'bootstrap_overrides.less';
 @import 'mixins.less';
 
+@import 'footer.less';
+@import 'text.less';
+
+@import 'template_start.less';
+@import 'template_prep.less';
+@import 'template_boil.less';
+@import 'template_rinse.less';
+@import 'template_wait.less';
+@import 'template_end.less';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -25,39 +35,6 @@ body {
 	.gradient-background(@backgroundStartColor, @backgroundEndColor);
 }
 
-p {
-	font-size: 2em;
-}
-
-a {
-	color: #00B7FF;
-}
-
-.centered {
-	text-align: center;
-}
-
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	/* Set the fixed height of the footer here */
-	height: 50px;
-	p {
-		margin-top: 15px;
-		font-size: 10px;
-		color: #DDD;
-		text-align: center;
-	}
-	.gradient-background(darken(@backgroundEndColor, 5%), @backgroundEndColor);
-}
-
-.bottom_btn {
-	position: absolute;
-	bottom: 70px;
-	width: 100%;
-}
-
 #top {
 	.centered;
 	margin-left: 10px;
@@ -78,13 +55,5 @@ a {
 	}
 }
 
-.social-linkedin {
-	background-image: url("@{gfxUrl}icons/glyphicons_social_17_linked_in.png");
-	display: block;
-	width: 20px;
-	height: 20px;
-}
-.social-github {
-	width: 10px;
-	height: 10px;
-}
+.debug_red { background-color: #FF0000; }
+.debug_blue { background-color: #0000FF; }
