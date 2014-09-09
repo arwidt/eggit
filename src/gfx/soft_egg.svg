@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 213 265" enable-background="new 0 0 213 265" xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" d="M213.084,152.332c0,73.085-47.682,112.332-106.5,112.332s-106.5-39.247-106.5-112.332S47.766,0,106.584,0
+		S213.084,79.247,213.084,152.332z"/>
+	<g>
+		<defs>
+			<ellipse id="SVGID_1_" cx="108" cy="158.369" rx="53" ry="56"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<ellipse clip-path="url(#SVGID_2_)" fill="#FFCD33" cx="108" cy="158.369" rx="53" ry="56"/>
+		<path clip-path="url(#SVGID_2_)" fill="#FAA51A" d="M20,181.331c0,0,29.147-37,71.574,0S135,170.887,162,173.109
+			c13.49,1.11,23.109,46.088,7,67.87c-16.132,21.813-58,20.429-58,20.429S21.95,285.658,20,181.331z"/>
+	</g>
+</g>
+</svg>

@@ -92,9 +92,9 @@ $(function() {
 	app.view = new app.EggitView();
 	
 	// START
-	/*app.model.set({
+	app.model.set({
 		typeData: app.settings.start,
-		currentStep: 'start'});*/
+		currentStep: 'start'});
 	
 	// PREP
 	/*app.model.set({
@@ -102,8 +102,8 @@ $(function() {
 		currentStep: 'prep'});*/
 	
 	// BOIL
-	app.model.set({typeData: app.settings.soft});
+	/*app.model.set({typeData: app.settings.soft});
 	app.model.set({currentStep: 'boil'});
-	app.model.start_time(app.model.get('typeData').boil.time);
+	app.model.start_time(app.model.get('typeData').boil.time);*/
 	
 });

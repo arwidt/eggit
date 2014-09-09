@@ -3,3 +3,4 @@ node_modules/*
 *.psd
 .DS_Store
 **/.DS_Store
+docs/gfx/

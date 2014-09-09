@@ -60,7 +60,7 @@ var app = app || {};
 									typeData: app.settings.soft,
 									currentStep: 'prep'});
 							});
-							$('#softbtn').hover(
+							/*$('#softbtn').hover(
 								function() {
 									$(this).stop();
 									$(this).transition({scale: 1.2}, 200);
@@ -68,7 +68,7 @@ var app = app || {};
 								function() {
 									$(this).stop();
 									$(this).transition({scale: 1}, 200);
-								});
+								});*/
 
 							$('#mediumbtn').click(function(){
 								app.model.set({

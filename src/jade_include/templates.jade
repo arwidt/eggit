@@ -5,17 +5,17 @@ script(type=["text/template"] id=["template_start"])
 			p(class=['centered']) <%= desc %>
 		div(class=['col-md-12 z-20 clearfix'])
 			div#softbtn(class=['btn col-xs-4 col-sm-4 col-md-4'])
-				img(class=['img-responsive'] src=['gfx/soft_egg.png'])
+				+svg_softegg
 			div#mediumbtn(class=['btn col-xs-4 col-sm-4 col-md-4'])
-				img(class=['img-responsive'] src=['gfx/medium_egg.png'])
+				+svg_mediumegg
 			div#hardbtn(class=['btn col-xs-4 col-sm-4 col-md-4'])
-				img(class=['img-responsive'] src=['gfx/hard_egg.png'])
+				+svg_hardegg
 		div(class=['col-md-12 clearfix'])
 			p(class=['centered']) <%= current %>
 
 script(type=["text/template"] id=["template_prep"])
 	div(class=['prep_gfx col-sm-6'])
-		img(src=['gfx/pot.png'])
+		+svg_prep_illu
 	div(class=['step_prep col-xs-12 col-sm-6'])
 		p <%= desc %>
 		button(type="button" class=["btn btn-default btn-block"]) <%= btnlabel %>
