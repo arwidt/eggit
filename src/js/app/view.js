@@ -55,7 +55,7 @@ var app = app || {};
 								_.template(that.templates.start.html(),
 								insert));
 
-							$('#softbtn').click(function(){
+							$('#softbtn').click(function() {
 								app.model.set({
 									typeData: app.settings.soft,
 									currentStep: 'prep'});
@@ -75,7 +75,7 @@ var app = app || {};
 									typeData: app.settings.medium,
 									currentStep: 'prep'});
 							});
-							$('#mediumbtn').hover(
+							/*$('#mediumbtn').hover(
 								function() {
 									$(this).stop();
 									$(this).transition({scale: 1.2}, 200);
@@ -83,14 +83,14 @@ var app = app || {};
 								function() {
 									$(this).stop();
 									$(this).transition({scale: 1}, 200);
-								});
+								});*/
 
 							$('#hardbtn').click(function(){
 								app.model.set({
 									typeData: app.settings.hard,
 									currentStep: 'prep'});
 							});
-							$('#hardbtn').hover(
+							/*$('#hardbtn').hover(
 								function() {
 									$(this).stop();
 									$(this).transition({scale: 1.2}, 200);
@@ -98,7 +98,7 @@ var app = app || {};
 								function() {
 									$(this).stop();
 									$(this).transition({scale: 1}, 200);
-								});
+								});*/
 						}).transition({opacity: 1, x: 0}, 500);
 					});
 					break;
