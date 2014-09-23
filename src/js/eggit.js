@@ -94,7 +94,8 @@ $(function() {
 	// START
 	app.model.set({
 		typeData: app.settings.start,
-		currentStep: 'start'});
+		currentStep: 'start'
+    });
 	
 	// PREP
 	/*app.model.set({
