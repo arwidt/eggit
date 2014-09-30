@@ -28,6 +28,7 @@
     "jquery": "^2.1.1",
     "jquery.transit": "^0.9.12",
     "requirejs": "^2.1.14",
+    "snapsvg": "^0.3.0",
     "underscore": "^1.6.0"
   }
 }

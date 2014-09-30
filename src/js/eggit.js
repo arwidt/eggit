@@ -3,82 +3,46 @@ var app = app || {};
 
 app.settings = {
 	start: {
-		desc: 'Just boiling an egg isnt hard, this site just wants to help you boil a perfect one.',
-		current: 'Currenlty there is <%= boiled %> perfectly boiled eggs!'
+		desc: 'How hard do you like your eggs?<br/>Choose below.',
+		current: '<%= boiled %> perfect eggs boiled so far!'
 	},
-	soft: {
-		prep: {
-			desc: 'Start by getting your water to a boil, when it boils put your eggs in and press the START button.',
-			btnlabel: 'START'
-		},
-		boil: {
-			desc: 'Boil your egg the exact time given.',
-			btnlabel: 'CANCEL',
-			time: 500000
-		},
-		rinse: {
-			desc: 'Rinse your eggs in cold water until the time ends.',
-			btnlabel: 'CANCEL',
-			time: 5000
-		},
-		wait: {
-			desc: 'Let your eggs stay in the water this period.',
-			btnlabel: 'CANCEL',
-			time: 5000
-		},
-		end: {
-			desc: 'You should now have a very good boiled egg, but no promises ;)',
-			btnlabel: 'RESET'
-		}
+	eggsize: {
+		desc: 'How big are your eggs?',
+		extra: 'A normal egg weighs between 53-63 grams, but some bigger eggs can weigh up to 90 grams.'
 	},
-	medium: {
-		prep: {
-			desc: 'Start boiling water and then prick your egg. Press start and then drop your egg in the water.',
-			btnlabel: 'START'
-		},
-		boil: {
-			desc: 'Boil your egg the exact time given.',
-			btnlabel: 'CANCEL',
-			time: 40000
-		},
-		rinse: {
-			desc: 'Rinse your eggs in cold water until the time ends.',
-			btnlabel: 'CANCEL',
-			time: 20000
-		},
-		wait: {
-			desc: 'Let your eggs stay in the water this period.',
-			btnlabel: 'CANCEL',
-			time: 10000
-		},
-		end: {
-			desc: 'You should now have a very good boiled egg, but no promises ;)',
-			btnlabel: 'RESET'
-		}
+	prep: {
+		desc: 'Start boiling water, prick our eggs and prepare to drop our eggs in the water.',
+		btnlabel: 'START'
 	},
-	hard: {
-		prep: {
-			desc: 'Start boiling water and then prick your egg. Press start and then drop your egg in the water.',
-			btnlabel: 'START'
+	boil : {
+		desc: 'Boil your egg the exact time given.',
+		btnlabel: 'CANCEL'
+	},
+	rinse: {
+		desc: 'Rinse your eggs in cold water until the time ends.',
+		btnlabel: 'CANCEL'
+	},
+	wait: {
+		desc: 'Let your eggs stay in the water this period.',
+		btnlabel: 'CANCEL'
+	},
+	end: {
+		desc: 'You should now have a very good boiled egg, but no promises ;)',
+		btnlabel: 'RESET'
+	},
+	time: {
+		boil: 5000,
+		rinse: 5000,
+		wait : 5000,
+		typefactor: {
+			soft: 1.0,
+			medium: 1.0,
+			hard: 1.0
 		},
-		boil: {
-			desc: 'Boil your egg the exact time given.',
-			btnlabel: 'CANCEL',
-			time: 50000
-		},
-		rinse: {
-			desc: 'Rinse your eggs in cold water until the time ends.',
-			btnlabel: 'CANCEL',
-			time: 20000
-		},
-		wait: {
-			desc: 'Let your eggs stay in the water this period.',
-			btnlabel: 'CANCEL',
-			time: 10000
-		},
-		end: {
-			desc: 'You should now have a very good boiled egg, but no promises ;)',
-			btnlabel: 'RESET'
+		sizefactor: {
+			small: 1.0,
+			medium: 1.0,
+			big: 1.0
 		}
 	}
 };
@@ -92,16 +56,33 @@ $(function() {
 	app.view = new app.EggitView();
 	
 	// START
-	app.model.set({
+	/*app.model.set({
 		typeData: app.settings.start,
-		currentStep: 'start'
-    });
+		currentStep: 'start'});*/
+
+	// SIZE
+	/*app.model.set({
+		typeData: app.settings.eggsize,
+		currentStep: 'size'});
+	return;*/
+
 	
 	// PREP
 	/*app.model.set({
-		typeData: app.settings.soft,
-		currentStep: 'prep'});*/
-	
+		egg_type: 0,
+		egg_size: 1,
+		typeData: app.settings.prep,
+		currentStep: 'prep'});
+	return;*/
+
+	// BOIL
+	app.model.set({
+		egg_type: 0,
+		egg_size: 1,
+		typeData: app.settings.boil,
+		currentStep: 'boil'});
+	app.model.start_time(app.settings.time.boil);
+
 	// BOIL
 	/*app.model.set({typeData: app.settings.soft});
 	app.model.set({currentStep: 'boil'});

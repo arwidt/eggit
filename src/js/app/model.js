@@ -9,6 +9,8 @@ var app = app || {};
 			title: '',
 			currentStep: '',
 			typeData: null,
+			egg_type: 0,
+			egg_size: 0,
 			time: 0,
 			timer: null
 		},

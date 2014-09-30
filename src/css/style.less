@@ -2,10 +2,12 @@
 @import 'bootstrap_overrides.less';
 @import 'mixins.less';
 
-@import 'footer.less';
 @import 'text.less';
+@import 'gfx.less';
+@import 'footer.less';
 
 @import 'template_start.less';
+@import 'template_size.less';
 @import 'template_prep.less';
 @import 'template_boil.less';
 @import 'template_rinse.less';
@@ -24,14 +26,13 @@ html {
 
 body {
 	margin-bottom: 30px;
-
 	/* Font */
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 500;
 	color: #FFFFFF;
 	font-size: 10px;
 	text-rendering: optimizeLegibility;
 
+	/* background gradient */
 	.gradient-background(@backgroundStartColor, @backgroundEndColor);
 }
 
@@ -55,5 +56,6 @@ body {
 	}
 }
 
+.debug_green {background-color: #00FF00; }
 .debug_red { background-color: #FF0000; }
 .debug_blue { background-color: #0000FF; }

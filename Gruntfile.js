@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+				//mangle: false
 				//beautify: true
 			},
 			build: {
@@ -26,8 +27,12 @@ module.exports = function(grunt) {
 				'libs/jquery.fittext.js',
 				'node_modules/underscore/underscore-min.js',
 				'node_modules/bootstrap/dist/js/bootstrap.min.js',
-				'node_modules/backbone/backbone-min.js'],
+				'node_modules/backbone/backbone-min.js',
+				'node_modules/snapsvg/dist/snap.svg-min.js'],
 				dest: 'build/js/<%= pkg.name %>.lib.js'
+			},
+			app: {
+				src: []
 			}
 		},
 		jade: {
@@ -85,15 +90,18 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: 'src/**/*.js',
-				tasks: ['uglify', 'concat', 'copy']
+				tasks: ['uglify', 'concat', 'copy'],
+				options: {livereload: true}
 			},
 			css: {
 				files: 'src/**/*.less',
-				tasks: ['less']
+				tasks: ['less'],
+				options: {livereload: true}
 			},
 			html: {
 				files: 'src/**/*.jade',
-				tasks: ['jade']
+				tasks: ['jade'],
+				options: {livereload: true}
 			}
 		},
 		shell: {

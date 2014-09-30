@@ -16,6 +16,21 @@
 .text-shadow (@string: 0 10px 30px rgba(0, 0, 0, 0.95)) {
 	text-shadow: @string;
 }
+
+.z-20 {
+	z-index: 20;
+}
+.z-10 {
+	z-index: 10;
+}
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:              @screen-sm-min;
+
 /*
 .box-shadow (@string) {
 	-webkit-box-shadow: @string;

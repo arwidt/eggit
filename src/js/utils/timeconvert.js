@@ -16,6 +16,11 @@ var TimeConvert = (function() {
 			if (seconds < 10) {seconds = "0"+seconds;}
 			
 			return minutes+':'+seconds;
+		},
+		seconds_to_minutes_and_secondsrest: function(s) {
+			return [
+				Math.floor(Math.min(s/60)),
+				s-(Math.floor(Math.min(s/60)) * 60)];
 		}
 	};
 })();
