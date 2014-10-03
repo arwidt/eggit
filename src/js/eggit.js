@@ -3,7 +3,7 @@ var app = app || {};
 
 app.settings = {
 	start: {
-		desc: 'How hard do you like your eggs?<br/>Choose below.',
+		desc: 'How do you like your eggs?<br/>Choose below.',
 		current: '<%= boiled %> perfect eggs boiled so far!'
 	},
 	eggsize: {
@@ -15,11 +15,11 @@ app.settings = {
 		btnlabel: 'START'
 	},
 	boil : {
-		desc: 'Boil your egg the exact time given.',
+		desc: 'Boil your eggs until the clock runs out.',
 		btnlabel: 'CANCEL'
 	},
 	rinse: {
-		desc: 'Rinse your eggs in cold water until the time ends.',
+		desc: 'Rinse your eggs in cold water until clock runs out.',
 		btnlabel: 'CANCEL'
 	},
 	wait: {
@@ -28,12 +28,12 @@ app.settings = {
 	},
 	end: {
 		desc: 'You should now have a very good boiled egg, but no promises ;)',
-		btnlabel: 'RESET'
+		btnlabel: 'BOIL AGAIN'
 	},
 	time: {
-		boil: 5000,
-		rinse: 5000,
-		wait : 5000,
+		boil: 60,
+		rinse: 60,
+		wait : 60,
 		typefactor: {
 			soft: 1.0,
 			medium: 1.0,
@@ -68,24 +68,26 @@ $(function() {
 
 	
 	// PREP
-	/*app.model.set({
+	app.model.set({
 		egg_type: 0,
 		egg_size: 1,
 		typeData: app.settings.prep,
 		currentStep: 'prep'});
-	return;*/
+	return;
 
 	// BOIL
-	app.model.set({
+	/*app.model.set({
 		egg_type: 0,
 		egg_size: 1,
 		typeData: app.settings.boil,
 		currentStep: 'boil'});
-	app.model.start_time(app.settings.time.boil);
+	app.model.set_times();
+	app.model.start_time(app.model.get('boiltime'));*/
 
-	// BOIL
-	/*app.model.set({typeData: app.settings.soft});
-	app.model.set({currentStep: 'boil'});
-	app.model.start_time(app.model.get('typeData').boil.time);*/
+	// END
+	/*app.model.set({
+		typeData: app.settings.end,
+		currentStep: 'end'
+	});*/
 	
 });
