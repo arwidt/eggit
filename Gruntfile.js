@@ -3,9 +3,13 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		jshint: {
+			all: ['Gruntfile.js', 'src/js/**/*.js']
+		},
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+				//mangle: false
 				//beautify: true
 			},
 			build: {
@@ -17,12 +21,18 @@ module.exports = function(grunt) {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
-			build: {
+			lib: {
 				src: ['node_modules/jquery/dist/jquery.min.js',
+				'node_modules/jquery.transit/jquery.transit.js',
+				'libs/jquery.fittext.js',
 				'node_modules/underscore/underscore-min.js',
 				'node_modules/bootstrap/dist/js/bootstrap.min.js',
-				'node_modules/backbone/backbone-min.js'],
+				'node_modules/backbone/backbone-min.js',
+				'node_modules/snapsvg/dist/snap.svg-min.js'],
 				dest: 'build/js/<%= pkg.name %>.lib.js'
+			},
+			app: {
+				src: []
 			}
 		},
 		jade: {
@@ -66,23 +76,41 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					{expand: false, src: ['node_modules/bootstrap/dist/css/bootstrap.min.css'], dest: 'build/css/bootstrap.min.css'}
+					{expand: false, src: ['node_modules/bootstrap/dist/css/bootstrap.min.css'], dest: 'build/css/bootstrap.min.css'},
+					{expand: true,
+						cwd: 'src/gfx/',
+						src: '**',
+						dest: 'build/gfx/',
+						flatten: true,
+						filter: 'isFile'},
+					{expand: false, src: ['node_modules/backbone/backbone-min.map'], dest: 'build/js/backbone-min.map'},
 				]
 			}
 		},
 		watch: {
 			scripts: {
 				files: 'src/**/*.js',
-				tasks: ['uglify', 'concat', 'copy']
+				tasks: ['uglify', 'concat', 'copy'],
+				options: {livereload: true}
 			},
 			css: {
 				files: 'src/**/*.less',
-				tasks: ['less']
+				tasks: ['less'],
+				options: {livereload: true}
 			},
 			html: {
 				files: 'src/**/*.jade',
-				tasks: ['jade']
+				tasks: ['jade'],
+				options: {livereload: true}
 			}
+		},
+		shell: {
+			 multiple: {
+				command: [
+					'echo UPLOAD TO TAR',
+					'scp -r build/* arwidt@thingsarerandom.com:/home/arwidt/node_www/public/eggit/'
+				].join(';')
+        	}
 		}
 	});
 
@@ -93,9 +121,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-shell');
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify', 'concat', 'jade', 'less', 'copy']);
+	grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'jade', 'less', 'copy']);
+
 
 };

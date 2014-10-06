@@ -12,16 +12,23 @@
   "author": "Arwid Thornstrom",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-uglify": "^0.5.1",
-    "jquery": "^2.1.1",
-    "grunt-contrib-jade": "^0.12.0",
-    "grunt-contrib-less": "^0.11.4",
-    "grunt-contrib-watch": "^0.6.1",
-    "underscore": "^1.6.0",
-    "grunt-contrib-concat": "^0.5.0",
+    "backbone": "^1.1.2",
     "bootstrap": "^3.2.0",
+    "font-awesome": "^4.1.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-copy": "^0.5.0",
-    "backbone": "^1.1.2"
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-jade": "^0.12.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-shell": "^0.7.0",
+    "jquery": "^2.1.1",
+    "jquery.transit": "^0.9.12",
+    "requirejs": "^2.1.14",
+    "snapsvg": "^0.3.0",
+    "underscore": "^1.6.0"
   }
 }

@@ -1,15 +1,18 @@
-@textcolor: #FFFFFF;
+@import 'vars.less';
+@import 'bootstrap_overrides.less';
+@import 'mixins.less';
 
-.bluegradient {
-	background: #15316b; /* Old browsers */
-	background: -moz-linear-gradient(top,  #15316b 0%, #2f4e91 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#15316b), color-stop(100%,#2f4e91)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #15316b 0%,#2f4e91 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #15316b 0%,#2f4e91 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #15316b 0%,#2f4e91 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #15316b 0%,#2f4e91 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15316b', endColorstr='#2f4e91',GradientType=0 ); /* IE6-9 */
-}
+@import 'text.less';
+@import 'gfx.less';
+@import 'footer.less';
+
+@import 'template_start.less';
+@import 'template_size.less';
+@import 'template_prep.less';
+@import 'template_boil.less';
+@import 'template_rinse.less';
+@import 'template_wait.less';
+@import 'template_end.less';
 
 * {
 	margin: 0;
@@ -22,82 +25,37 @@ html {
 }
 
 body {
-
 	margin-bottom: 30px;
-
 	/* Font */
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
 	color: #FFFFFF;
 	font-size: 10px;
 	text-rendering: optimizeLegibility;
 
-	.bluegradient;
+	/* background gradient */
+	.gradient-background(@backgroundStartColor, @backgroundEndColor);
 }
 
-p {
-	font-size: 2em;
+#top {
+	.centered;
+	margin-left: 10px;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
-a {
-	color: #00B7FF;
-}
-
-h1 {
-	color: #FFFFFF;
-	font-size: 80px;
-	margin: bottom 10px;
+#time_visual {
 	font-family: 'Sniglet', cursive;
-}
+	font-size: 300px;
+	margin: 5%;
 
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	/* Set the fixed height of the footer here */
-	height: 30px;
-	background-color: #15316b;
-	p {
-		margin-top: 8px;
-		font-size: 10px;
-		color: #DDD;
-		text-align: center;
+	.text-shadow;
+
+	.time_divider {
+		position: relative;
+		top: -0.1em;
 	}
 }
 
-#top h1 {
-	text-align: center;
-}
-
-#top p {
-	text-align: center;
-}
-
-#choice {
-	
-}
-
-#soft {
-	background-color: #FF0000;
-	height: 150px;
-}
-
-#medium {
-	background-color: #00FF00;
-	height: 150px;
-}
-
-#hard {
-	background-color: #0000FF;
-	height: 150px;
-}
-
-.debug_red {
-	background-color: #660000;
-}
-.debug_blue {
-	background-color: #000066;
-}
-.debug_green {
-	background-color: #006600;
-}
+.debug_green {background-color: #00FF00; }
+.debug_red { background-color: #FF0000; }
+.debug_blue { background-color: #0000FF; }

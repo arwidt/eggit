@@ -1,4 +1,7 @@
 build/*
 node_modules/*
-upload.sh
+*.psd
 .DS_Store
+**/.DS_Store
+docs/gfx/
+upload.sh
