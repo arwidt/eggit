@@ -56,9 +56,9 @@ $(function() {
 	app.view = new app.EggitView();
 	
 	// START
-	/*app.model.set({
+	app.model.set({
 		typeData: app.settings.start,
-		currentStep: 'start'});*/
+		currentStep: 'start'});
 
 	// SIZE
 	/*app.model.set({
@@ -68,12 +68,12 @@ $(function() {
 
 	
 	// PREP
-	app.model.set({
+	/*app.model.set({
 		egg_type: 0,
 		egg_size: 1,
 		typeData: app.settings.prep,
 		currentStep: 'prep'});
-	return;
+	return;*/
 
 	// BOIL
 	/*app.model.set({

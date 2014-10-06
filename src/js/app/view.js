@@ -182,9 +182,13 @@ var app = app || {};
 						typeData = app.model.get('typeData');
 						that.show_bottom_btn(typeData.btnlabel);
 
+						// Call counter
 						/*$.getJSON("http://thingsarerandom.com:8080/eggit/api/addEgg?auth=123", function( data ) {
 							console.log("currentEggs:", data);
 						});*/
+
+						// Render great recipies widget.
+						// code
 
 						that.el.css({x: 10});
 						that.el.html(_.template(that.templates.end.html())(typeData));
@@ -224,7 +228,9 @@ var app = app || {};
 						break;
 					case 'wait':
 						app.model.stop_time();
-						app.model.set({currentStep: 'end'});
+						app.model.set({
+							typeData: app.settings.end,
+							currentStep: 'end'});
 						break;
 				}
 			}
