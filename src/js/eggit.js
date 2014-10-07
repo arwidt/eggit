@@ -57,16 +57,16 @@ $(function() {
 	app.view = new app.EggitView();
 	
 	// START
-	/*app.model.set({
+	app.model.set({
 		typeData: app.settings.start,
-		currentStep: 'start'});*/
+		currentStep: 'start'});
 	
 
 	// SIZE
-	app.model.set({
+	/*app.model.set({
 		typeData: app.settings.eggsize,
 		currentStep: 'size'});
-	return;
+	return;*/
 
 	
 	// PREP
