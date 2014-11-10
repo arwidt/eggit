@@ -56,26 +56,46 @@ var app = app || {};
 							var h = _.template(that.templates.start.html())(insert);
 							that.el.html(h);
 
-							$('#softbtn').click(function() {
+							var softbtn = $('#softbtn');
+							var mediumbtn = $('#mediumbtn');
+							var hardbtn = $('#hardbtn');
+
+							softbtn.click(function() {
 								app.model.set({
 									egg_type: 0,
 									typeData: app.settings.eggsize,
 									currentStep: 'size'});
 							});
+							softbtn.hover(function(){
+								softbtn.transition({scale: 1.05, y: -5}, 200);
+							}, function(){
+								softbtn.transition({scale: 1, y: 0}, 200);
+							});
 
-							$('#mediumbtn').click(function(){
+							mediumbtn.click(function(){
 								app.model.set({
 									egg_type: 1,
 									typeData: app.settings.eggsize,
 									currentStep: 'size'});
 							});
+							mediumbtn.hover(function(){
+								mediumbtn.transition({scale: 1.05, y: -5}, 200);
+							}, function(){
+								mediumbtn.transition({scale: 1, y: 0}, 200);
+							});
 
-							$('#hardbtn').click(function(){
+							hardbtn.click(function(){
 								app.model.set({
 									egg_type: 2,
 									typeData: app.settings.eggsize,
 									currentStep: 'size'});
 							});
+							hardbtn.hover(function(){
+								hardbtn.transition({scale: 1.05, y: -5}, 200);
+							}, function(){
+								hardbtn.transition({scale: 1, y: 0}, 200);
+							});
+
 						}).transition({opacity: 1, x: 0}, 500);
 					});
 					break;
@@ -87,25 +107,44 @@ var app = app || {};
 						that.el.css({x: 10});
 						that.el.html(_.template(that.templates.eggsize.html())(typeData));
 
-						$('#smallbtn').click(function() {
+						var smallbtn = $('#smallbtn');
+						var medbtn = $('#medbtn');
+						var bigbtn = $('#bigbtn');
+
+						smallbtn.click(function() {
 							app.model.set({
 								egg_size: 0,
 								typeData: app.settings.prep,
 								currentStep: 'prep'});
 						});
+						smallbtn.hover(function(){
+							smallbtn.transition({scale: 1.05, y: -5}, 200);
+						}, function(){
+							smallbtn.transition({scale: 1, y: 0}, 200);
+						});
 
-						$('#medbtn').click(function(){
+						medbtn.click(function(){
 							app.model.set({
 								egg_size: 1,
 								typeData: app.settings.prep,
 								currentStep: 'prep'});
 						});
+						medbtn.hover(function(){
+							medbtn.transition({scale: 1.05, y: -5}, 200);
+						}, function(){
+							medbtn.transition({scale: 1, y: 0}, 200);
+						});
 
-						$('#bigbtn').click(function(){
+						bigbtn.click(function(){
 							app.model.set({
 								egg_size: 2,
 								typeData: app.settings.prep,
 								currentStep: 'prep'});
+						});
+						bigbtn.hover(function(){
+							bigbtn.transition({scale: 1.05, y: -5}, 200);
+						}, function(){
+							bigbtn.transition({scale: 1, y: 0}, 200);
 						});
 
 					}).transition({opacity: 1, x: 0}, 500);
@@ -183,9 +222,9 @@ var app = app || {};
 						that.show_bottom_btn(typeData.btnlabel);
 
 						// Call counter
-						/*$.getJSON("http://thingsarerandom.com:8080/eggit/api/addEgg?auth=123", function( data ) {
+						$.getJSON("http://thingsarerandom.com:8080/eggit/api/addEgg?auth=123", function( data ) {
 							console.log("currentEggs:", data);
-						});*/
+						});
 
 						// Render great recipies widget.
 						// code
@@ -249,8 +288,9 @@ var app = app || {};
 		},
 
 		hide_bottom_btn: function() {
+			var that = this;
 			this.bottom_btn.transition({opacity: 0, y: 10}, 300, function() {
-				this.bottom_btn.css({visibility: 'hidden'});
+				that.bottom_btn.css({visibility: 'hidden'});
 			});
 		},
 

@@ -8,41 +8,42 @@ app.settings = {
 	},
 	eggsize: {
 		desc: 'How big are your eggs?',
-		extra: 'A normal egg weighs between 53-63 grams, but some bigger eggs can weigh up to 90 grams.'
+		extra: 'A normal egg weighs between 53-63 grams, but some larger eggs can weigh up to 90 grams.'
 	},
 	prep: {
-		desc: 'Start boiling water, prick our eggs and prepare to drop our eggs in the water.',
+		desc: 'Start boiling the water. Prick your eggs while waiting. Put the eggs in the boiling water and then press start.',
 		btnlabel: 'START'
 	},
 	boil : {
-		desc: 'Boil your eggs until the clock runs out.',
+		desc: 'Boil your eggs until the time runs out.',
 		btnlabel: 'CANCEL'
 	},
 	rinse: {
-		desc: 'Rinse your eggs in cold water until clock runs out.',
+		desc: 'Rinse your eggs in cold water.',
 		btnlabel: 'CANCEL'
 	},
 	wait: {
-		desc: 'Let your eggs stay in the water this period.',
+		desc: 'Let your eggs lie in the cold water.',
 		btnlabel: 'CANCEL'
 	},
 	end: {
-		desc: 'You should now have a very good boiled egg, but no promises ;)',
-		btnlabel: 'BOIL AGAIN'
+		desc: 'Enjoy your perfectly boiled eggs!',
+		extra: '',
+		btnlabel: 'KEEP BOILING'
 	},
 	time: {
-		boil: 60,
-		rinse: 60,
-		wait : 60,
+		boil: 10,
+		rinse: 10,
+		wait : 10,
 		typefactor: {
-			soft: 1.0,
+			soft: 0.9,
 			medium: 1.0,
-			hard: 1.0
+			hard: 1.1
 		},
 		sizefactor: {
-			small: 1.0,
+			small: 0.9,
 			medium: 1.0,
-			big: 1.0
+			big: 1.1
 		}
 	}
 };
@@ -59,6 +60,7 @@ $(function() {
 	app.model.set({
 		typeData: app.settings.start,
 		currentStep: 'start'});
+	
 
 	// SIZE
 	/*app.model.set({
@@ -75,14 +77,28 @@ $(function() {
 		currentStep: 'prep'});
 	return;*/
 
+	//app.model.set_times();
+	
 	// BOIL
 	/*app.model.set({
 		egg_type: 0,
 		egg_size: 1,
 		typeData: app.settings.boil,
-		currentStep: 'boil'});
-	app.model.set_times();
-	app.model.start_time(app.model.get('boiltime'));*/
+		currentStep: 'boil'});*/
+	
+	// RINSE
+	/*app.model.set({
+		egg_type: 0,
+		egg_size: 1,
+		typeData: app.settings.rinse,
+		currentStep: 'rinse'});*/
+
+	// WAIT
+	/*app.model.set({
+		egg_type: 0,
+		egg_size: 1,
+		typeData: app.settings.wait,
+		currentStep: 'wait'});*/
 
 	// END
 	/*app.model.set({

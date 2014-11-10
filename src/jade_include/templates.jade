@@ -44,7 +44,7 @@ script(type=["text/template"] id=["template_boil"])
 		div(class=['col-xs-12 centered boil_desc'])
 			p <%= desc %>
 		div(class=['col-xs-2'])
-		div(class=['col-xs-8 centered'])
+		div(class=['col-xs-8'])
 			+svg_clock
 
 script(type=["text/template"] id=["template_rinse"])
@@ -52,7 +52,7 @@ script(type=["text/template"] id=["template_rinse"])
 		div(class=['col-xs-12 centered rinse_desc'])
 			p <%= desc %>
 		div(class=['col-xs-2'])
-		div(class=['col-xs-8 centered'])
+		div(class=['col-xs-8'])
 			+svg_clock
 
 script(type=["text/template"] id=["template_wait"])
@@ -60,13 +60,18 @@ script(type=["text/template"] id=["template_wait"])
 		div(class=['col-xs-12 centered wait_desc'])
 			p <%= desc %>
 		div(class=['col-xs-2'])
-		div(class=['col-xs-8 centered'])
+		div(class=['col-xs-8'])
 			+svg_clock
 
 script(type=["text/template"] id=["template_end"])
 	div(class=['step_end col-md-12'])
 		div(class=['col-xs-12 centered end_desc'])
 			p <%= desc %>
+		div(class=['col-xs-2'])
+		div(class=['end_gfx col-xs-8'])
+			+svg_breakfast
+		div(class=['col-xs-12 end_extra'])
+			p(class=['centered']) <%= extra %>
 
 
 

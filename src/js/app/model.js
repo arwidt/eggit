@@ -30,10 +30,14 @@ var app = app || {};
 		set_times: function() {
 			var type = this.get('egg_type');
 			var size = this.get('egg_size');
+
 			var s = {
-				boiltime: Math.ceil(app.settings.time.boil + (0.1*type) + (0.1*size)),
-				rinsetime: Math.ceil(app.settings.time.rinse + (0.1*type) + (0.1*size)),
-				waittime: Math.ceil(app.settings.time.wait + (0.1*type) + (0.1*size))
+				//boiltime: Math.ceil(app.settings.time.boil * (type) * (size)),
+				boiltime: Math.ceil(app.settings.time.boil),
+				//rinsetime: Math.ceil(app.settings.time.rinse * (type) * (size)),
+				rinsetime: Math.ceil(app.settings.time.rinse),
+				//waittime: Math.ceil(app.settings.time.wait * (type) * (size))
+				waittime: Math.ceil(app.settings.time.wait)
 			};
 			this.set(s);
 		},
@@ -44,7 +48,7 @@ var app = app || {};
 
 			var that = this;
 			this.set({time: time_val});
-			this.attributes.timer = setInterval(function() { that.update_timer(); }, 100);
+			this.attributes.timer = setInterval(function() { that.update_timer(); }, 1000);
 		},
 
 		stop_time: function() {
