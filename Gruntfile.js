@@ -30,9 +30,6 @@ module.exports = function(grunt) {
 				'node_modules/backbone/backbone-min.js',
 				'node_modules/snapsvg/dist/snap.svg-min.js'],
 				dest: 'build/js/<%= pkg.name %>.lib.js'
-			},
-			app: {
-				src: []
 			}
 		},
 		jade: {
