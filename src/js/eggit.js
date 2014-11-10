@@ -32,9 +32,9 @@ app.settings = {
 		btnlabel: 'KEEP BOILING'
 	},
 	time: {
-		boil: 60,
-		rinse: 60,
-		wait : 60,
+		boil: 10,
+		rinse: 10,
+		wait : 10,
 		typefactor: {
 			soft: 0.9,
 			medium: 1.0,
