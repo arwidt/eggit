@@ -62,17 +62,17 @@ var app = app || {};
 
 							softbtn.on('click', function() {
 								console.log(this);
-								/*app.model.set({
+								app.model.set({
 									egg_type: 0,
 									typeData: app.settings.eggsize,
-									currentStep: 'size'});*/
+									currentStep: 'size'});
 							});
 							console.log(softbtn);
-							/*softbtn.hover(function(){
+							softbtn.hover(function(){
 								softbtn.transition({scale: 1.05, y: -5}, 200);
 							}, function(){
 								softbtn.transition({scale: 1, y: 0}, 200);
-							});*/
+							});
 
 							mediumbtn.click(function(){
 								app.model.set({
