@@ -48,18 +48,18 @@ var app = app || {};
 
 			var that = this;
 			this.set({time: time_val});
-			this.attributes.timer = setInterval(function() { that.update_timer(); }, 1000);
+			this.attributes.timer = setInterval(function() { that.update_timer(); }, 50);
 		},
 
 		stop_time: function() {
 			console.log("stop_time");
-
 			clearInterval(this.attributes.timer);
 		},
 
 		update_timer: function() {
 			this.set('time', this.get('time')-1);
 			if (this.get('time') <= 0) {
+				
 				this.set('time', 0);
 				this.stop_time();
 			}

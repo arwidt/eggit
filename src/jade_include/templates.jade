@@ -45,7 +45,8 @@ script(type=["text/template"] id=["template_boil"])
 			p <%= desc %>
 		div(class=['col-xs-2'])
 		div(class=['col-xs-8'])
-			+svg_clock
+			div#clock
+				+svg_clock
 
 script(type=["text/template"] id=["template_rinse"])
 	div(class=['step_rinse col-md-12'])
@@ -53,7 +54,8 @@ script(type=["text/template"] id=["template_rinse"])
 			p <%= desc %>
 		div(class=['col-xs-2'])
 		div(class=['col-xs-8'])
-			+svg_clock
+			div#clock
+				+svg_clock
 
 script(type=["text/template"] id=["template_wait"])
 	div(class=['step_wait col-md-12'])
@@ -61,7 +63,8 @@ script(type=["text/template"] id=["template_wait"])
 			p <%= desc %>
 		div(class=['col-xs-2'])
 		div(class=['col-xs-8'])
-			+svg_clock
+			div#clock
+				+svg_clock
 
 script(type=["text/template"] id=["template_end"])
 	div(class=['step_end col-md-12'])

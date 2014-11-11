@@ -60,17 +60,19 @@ var app = app || {};
 							var mediumbtn = $('#mediumbtn');
 							var hardbtn = $('#hardbtn');
 
-							softbtn.click(function() {
-								app.model.set({
+							softbtn.on('click', function() {
+								console.log(this);
+								/*app.model.set({
 									egg_type: 0,
 									typeData: app.settings.eggsize,
-									currentStep: 'size'});
+									currentStep: 'size'});*/
 							});
-							softbtn.hover(function(){
+							console.log(softbtn);
+							/*softbtn.hover(function(){
 								softbtn.transition({scale: 1.05, y: -5}, 200);
 							}, function(){
 								softbtn.transition({scale: 1, y: 0}, 200);
-							});
+							});*/
 
 							mediumbtn.click(function(){
 								app.model.set({
@@ -252,24 +254,32 @@ var app = app || {};
 				switch(app.model.get('currentStep')) {
 					case 'boil':
 						app.model.stop_time();
-						app.model.set({
-							typeData: app.settings.rinse,
-							currentStep: 'rinse'});
-						_.delay(start_clock, 2000, app.model.get('rinsetime'));
+						this.clock.alarm();
+						_.delay(function() {
+							app.model.set({
+								typeData: app.settings.rinse,
+								currentStep: 'rinse'});
+						}, 3000);
+						_.delay(start_clock, 5000, app.model.get('rinsetime'));
 						break;
 					case 'rinse':
 						app.model.stop_time();
-						app.model.set({
-							typeData: app.settings.wait,
-							currentStep: 'wait'});
-
-						_.delay(start_clock, 2000, app.model.get('waittime'));
+						this.clock.alarm();
+						_.delay(function() {
+							app.model.set({
+								typeData: app.settings.wait,
+								currentStep: 'wait'});
+						}, 3000);
+						_.delay(start_clock, 5000, app.model.get('waittime'));
 						break;
 					case 'wait':
 						app.model.stop_time();
-						app.model.set({
-							typeData: app.settings.end,
-							currentStep: 'end'});
+						this.clock.alarm();
+						_.delay(function() {
+							app.model.set({
+								typeData: app.settings.end,
+								currentStep: 'end'});
+						}, 3000);
 						break;
 				}
 			}

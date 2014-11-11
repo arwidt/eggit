@@ -32,9 +32,9 @@ app.settings = {
 		btnlabel: 'KEEP BOILING'
 	},
 	time: {
-		boil: 10,
-		rinse: 10,
-		wait : 10,
+		boil: 30,
+		rinse: 30,
+		wait : 30,
 		typefactor: {
 			soft: 0.9,
 			medium: 1.0,
@@ -81,11 +81,15 @@ $(function() {
 	
 	// BOIL
 	/*app.model.set({
-		egg_type: 0,
-		egg_size: 1,
+		egg_type: 1,
+		egg_size: 1});
+	app.model.set_times();
+	app.model.set({
 		typeData: app.settings.boil,
-		currentStep: 'boil'});*/
-	
+		currentStep: 'boil'});
+	app.model.start_time(app.model.get('boiltime'));
+	app.view.show_bottom_btn("CANCEL");*/
+
 	// RINSE
 	/*app.model.set({
 		egg_type: 0,

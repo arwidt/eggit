@@ -33,6 +33,8 @@ var app = app || {};
 			this.minuteText = this.clock.text(58, 60, t[0] + " min");
 			this.clockHead = this.clock.group(head_center, head_line, head_end);
 			this.colorBody = this.clock.select("#color_body");
+
+			//this.clockGroup.group(this.clockGroup, this.clockHead, this.minuteText);
 		},
 
 		update_time: function(seconds) {
@@ -51,11 +53,26 @@ var app = app || {};
 			});
 		},
 
-		ring: function() {
-			console.log("ring");
-			//this.clockGroup.animate({
-			//	fill: '#FF0000'
-			//}, 2000);
+		alarm: function() {
+			console.log("ALARM!!");
+			var wiggletime = 50;
+			$("#clock").transition({scale: 1.3, y: -40}, 500)
+				.transition({rotate: '5'}, wiggletime)
+				.transition({rotate: '-5'}, wiggletime)
+				.transition({rotate: '5'}, wiggletime)
+				.transition({rotate: '-5'}, wiggletime)
+				.transition({rotate: '5'}, wiggletime)
+				.transition({rotate: '-5'}, wiggletime)
+				.transition({rotate: '5'}, wiggletime)
+				.transition({rotate: '-5'}, wiggletime)
+				.transition({rotate: '5'}, wiggletime)
+				.transition({rotate: '-5'}, wiggletime)
+				.transition({rotate: '5'}, wiggletime)
+				.transition({rotate: '-5'}, wiggletime)
+				.transition({rotate: '5'}, wiggletime)
+				.transition({rotate: '-5'}, wiggletime)
+				.transition({rotate: '0'}, wiggletime)
+				.transition({delay: 400, rotate: '0', y: 0, scale: 1}, 500);
 		},
 
 		render: function() {
