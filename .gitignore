@@ -4,5 +4,4 @@ node_modules/*
 .DS_Store
 **/.DS_Store
 docs/gfx/
-upload_tar.sh
-upload_heroku.sh
+deploy_to_thingsarerandom.sh

@@ -100,14 +100,6 @@ module.exports = function(grunt) {
 				tasks: ['jade'],
 				options: {livereload: true}
 			}
-		},
-		shell: {
-			 multiple: {
-				command: [
-					'echo UPLOAD TO TAR',
-					'scp -r build/* arwidt@thingsarerandom.com:/home/arwidt/node_www/public/eggit/'
-				].join(';')
-        	}
 		}
 	});
 

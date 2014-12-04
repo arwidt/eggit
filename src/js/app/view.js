@@ -46,63 +46,57 @@ var app = app || {};
 			switch(app.model.get('currentStep')) {
 				case 'start':
 					this.hide_bottom_btn();
-					$.getJSON("http://thingsarerandom.com:8080/eggit/api/getEggs", function( data ) {
-						that.el.transition({opacity: 0, x: 10}, function() {
-							
-							typeData = app.model.get('typeData');
-							var insert = {desc: typeData.desc, current: typeData.current};
-							insert.current = _.template(insert.current)({boiled: data.numOfEggs});
+					that.el.transition({opacity: 0, x: 10}, function() {
+						
+						typeData = app.model.get('typeData');
+						var insert = {desc: typeData.desc};
 
-							var h = _.template(that.templates.start.html())(insert);
-							that.el.html(h);
+						var h = _.template(that.templates.start.html())(insert);
+						that.el.html(h);
 
-							var softbtn = $('#softbtn');
-							var mediumbtn = $('#mediumbtn');
-							var hardbtn = $('#hardbtn');
+						var softbtn = $('#softbtn');
+						var mediumbtn = $('#mediumbtn');
+						var hardbtn = $('#hardbtn');
 
-							softbtn.on('click', function() {
-								console.log(this);
-								app.model.set({
-									egg_type: 0,
-									typeData: app.settings.eggsize,
-									currentStep: 'size'});
-							});
-							console.log(softbtn);
-							softbtn.hover(function(){
-								softbtn.transition({scale: 1.05, y: -5}, 200);
-							}, function(){
-								softbtn.transition({scale: 1, y: 0}, 200);
-							});
+						softbtn.on('click', function() {
+							app.model.set({
+								egg_type: 0,
+								typeData: app.settings.eggsize,
+								currentStep: 'size'});
+						});
+						softbtn.hover(function(){
+							softbtn.transition({scale: 1.05, y: -5}, 200);
+						}, function(){
+							softbtn.transition({scale: 1, y: 0}, 200);
+						});
 
-							mediumbtn.click(function(){
-								app.model.set({
-									egg_type: 1,
-									typeData: app.settings.eggsize,
-									currentStep: 'size'});
-							});
-							mediumbtn.hover(function(){
-								mediumbtn.transition({scale: 1.05, y: -5}, 200);
-							}, function(){
-								mediumbtn.transition({scale: 1, y: 0}, 200);
-							});
+						mediumbtn.click(function(){
+							app.model.set({
+								egg_type: 1,
+								typeData: app.settings.eggsize,
+								currentStep: 'size'});
+						});
+						mediumbtn.hover(function(){
+							mediumbtn.transition({scale: 1.05, y: -5}, 200);
+						}, function(){
+							mediumbtn.transition({scale: 1, y: 0}, 200);
+						});
 
-							hardbtn.click(function(){
-								app.model.set({
-									egg_type: 2,
-									typeData: app.settings.eggsize,
-									currentStep: 'size'});
-							});
-							hardbtn.hover(function(){
-								hardbtn.transition({scale: 1.05, y: -5}, 200);
-							}, function(){
-								hardbtn.transition({scale: 1, y: 0}, 200);
-							});
+						hardbtn.click(function(){
+							app.model.set({
+								egg_type: 2,
+								typeData: app.settings.eggsize,
+								currentStep: 'size'});
+						});
+						hardbtn.hover(function(){
+							hardbtn.transition({scale: 1.05, y: -5}, 200);
+						}, function(){
+							hardbtn.transition({scale: 1, y: 0}, 200);
+						});
 
-						}).transition({opacity: 1, x: 0}, 500);
-					});
+					}).transition({opacity: 1, x: 0}, 500);
 					break;
 				case 'size':
-					console.log('size');
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
 
 						typeData = app.model.get('typeData');
@@ -152,7 +146,6 @@ var app = app || {};
 					}).transition({opacity: 1, x: 0}, 500);
 					break;
 				case 'prep':
-					console.log("prep");
 					this.el.transition({opacity: 0, x: -10}, 500, function() {
 						
 						typeData = app.model.get('typeData');
@@ -223,14 +216,6 @@ var app = app || {};
 						typeData = app.model.get('typeData');
 						that.show_bottom_btn(typeData.btnlabel);
 
-						// Call counter
-						$.getJSON("http://thingsarerandom.com:8080/eggit/api/addEgg?auth=123", function( data ) {
-							console.log("currentEggs:", data);
-						});
-
-						// Render great recipies widget.
-						// code
-
 						that.el.css({x: 10});
 						that.el.html(_.template(that.templates.end.html())(typeData));
 
@@ -240,7 +225,6 @@ var app = app || {};
 		},
 
 		change_time: function() {
-			console.log("change_time", app.model.get('time'));
 			
 			var start_clock = function(sec) {
 				app.model.start_time(sec);
