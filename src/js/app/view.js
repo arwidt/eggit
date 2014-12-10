@@ -65,9 +65,9 @@ var app = app || {};
 								currentStep: 'size'});
 						});
 						softbtn.hover(function(){
-							softbtn.transition({scale: 1.05, y: -5}, 200);
+							softbtn.transition({scale: 1.05, y: -5}, 50);
 						}, function(){
-							softbtn.transition({scale: 1, y: 0}, 200);
+							softbtn.transition({scale: 1, y: 0}, 50);
 						});
 
 						mediumbtn.click(function(){
@@ -77,9 +77,9 @@ var app = app || {};
 								currentStep: 'size'});
 						});
 						mediumbtn.hover(function(){
-							mediumbtn.transition({scale: 1.05, y: -5}, 200);
+							mediumbtn.transition({scale: 1.05, y: -5}, 50);
 						}, function(){
-							mediumbtn.transition({scale: 1, y: 0}, 200);
+							mediumbtn.transition({scale: 1, y: 0}, 50);
 						});
 
 						hardbtn.click(function(){
@@ -89,9 +89,9 @@ var app = app || {};
 								currentStep: 'size'});
 						});
 						hardbtn.hover(function(){
-							hardbtn.transition({scale: 1.05, y: -5}, 200);
+							hardbtn.transition({scale: 1.05, y: -5}, 50);
 						}, function(){
-							hardbtn.transition({scale: 1, y: 0}, 200);
+							hardbtn.transition({scale: 1, y: 0}, 50);
 						});
 
 					}).transition({opacity: 1, x: 0}, 500);
@@ -114,9 +114,9 @@ var app = app || {};
 								currentStep: 'prep'});
 						});
 						smallbtn.hover(function(){
-							smallbtn.transition({scale: 1.05, y: -5}, 200);
+							smallbtn.transition({scale: 1.05, y: -5}, 50);
 						}, function(){
-							smallbtn.transition({scale: 1, y: 0}, 200);
+							smallbtn.transition({scale: 1, y: 0}, 50);
 						});
 
 						medbtn.click(function(){
@@ -126,9 +126,9 @@ var app = app || {};
 								currentStep: 'prep'});
 						});
 						medbtn.hover(function(){
-							medbtn.transition({scale: 1.05, y: -5}, 200);
+							medbtn.transition({scale: 1.05, y: -5}, 50);
 						}, function(){
-							medbtn.transition({scale: 1, y: 0}, 200);
+							medbtn.transition({scale: 1, y: 0}, 50);
 						});
 
 						bigbtn.click(function(){
@@ -138,9 +138,9 @@ var app = app || {};
 								currentStep: 'prep'});
 						});
 						bigbtn.hover(function(){
-							bigbtn.transition({scale: 1.05, y: -5}, 200);
+							bigbtn.transition({scale: 1.05, y: -5}, 50);
 						}, function(){
-							bigbtn.transition({scale: 1, y: 0}, 200);
+							bigbtn.transition({scale: 1, y: 0}, 50);
 						});
 
 					}).transition({opacity: 1, x: 0}, 500);
