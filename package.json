@@ -2,7 +2,7 @@
   "name": "eggit",
   "version": "0.0.0",
   "description": "How to boil an egg",
-  "main": "eggit.js",
+  "main": "./bin/www",
   "directories": {
     "doc": "docs"
   },
