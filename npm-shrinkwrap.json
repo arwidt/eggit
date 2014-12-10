@@ -1,0 +1,36 @@
+{
+  "name": "eggit",
+  "version": "0.0.0",
+  "dependencies": {
+    "backbone": {
+      "version": "1.1.2",
+      "from": "backbone@^1.1.2",
+      "resolved": "https://registry.npmjs.org/backbone/-/backbone-1.1.2.tgz"
+    },
+    "bootstrap": {
+      "version": "3.3.1",
+      "from": "bootstrap@^3.2.0",
+      "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.1.tgz"
+    },
+    "jquery": {
+      "version": "2.1.1",
+      "from": "jquery@*",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.1.1.tgz"
+    },
+    "jquery.transit": {
+      "version": "0.9.12",
+      "from": "jquery.transit@^0.9.12",
+      "resolved": "https://registry.npmjs.org/jquery.transit/-/jquery.transit-0.9.12.tgz"
+    },
+    "snapsvg": {
+      "version": "0.3.0",
+      "from": "snapsvg@^0.3.0",
+      "resolved": "https://registry.npmjs.org/snapsvg/-/snapsvg-0.3.0.tgz"
+    },
+    "underscore": {
+      "version": "1.7.0",
+      "from": "underscore@^1.6.0",
+      "resolved": "https://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz"
+    }
+  }
+}

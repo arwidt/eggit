@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="breakfast_svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 134.037 116.979" enable-background="new 0 0 134.037 116.979" xml:space="preserve">
+<g id="plate">
+	<g>
+		<circle opacity="0.2" cx="53.721" cy="64.751" r="50.922"/>
+		<circle opacity="0.3" cx="52.826" cy="63.856" r="50.922"/>
+		<circle fill="#FFFFFF" cx="52.826" cy="62.065" r="50.922"/>
+		<radialGradient id="SVGID_1_" cx="52.8261" cy="62.0654" r="36.4117" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.8178" style="stop-color:#FDFDFD"/>
+			<stop  offset="1" style="stop-color:#FAFAFA"/>
+		</radialGradient>
+		<circle fill="url(#SVGID_1_)" cx="52.826" cy="62.065" r="36.412"/>
+		<path fill="#E5E5E5" d="M52.826,27.444c19.809,0,35.912,15.822,36.389,35.517c0.007-0.299,0.023-0.595,0.023-0.895
+			c0-20.11-16.302-36.412-36.412-36.412S16.414,41.956,16.414,62.065c0,0.3,0.015,0.597,0.023,0.895
+			C16.914,43.266,33.017,27.444,52.826,27.444z"/>
+	</g>
+</g>
+<g id="lingongrova">
+	<g>
+		<path opacity="0.7" d="M23.398,65.787c0.931-9.667,21.682-17.587,38.746-15.945s23.175,10.14,22.244,19.807
+			c-0.931,9.667-14.56,6.217-31.624,4.575S22.468,75.453,23.398,65.787z"/>
+		<g>
+			<path fill="#B59665" stroke="#785F30" stroke-width="2" d="M21.398,63.787c0.931-9.667,21.682-17.587,38.746-15.945
+				s23.175,10.14,22.244,19.807c-0.931,9.667-14.56,6.217-31.624,4.575S20.468,73.453,21.398,63.787z"/>
+			<g>
+				<circle fill="#FFFFFF" cx="32.963" cy="63.908" r="5.505"/>
+				<circle fill="#EDCC27" cx="32.963" cy="63.908" r="1.248"/>
+			</g>
+			<g>
+				<circle fill="#FFFFFF" cx="39.963" cy="60.908" r="7.645"/>
+				<circle fill="#EDCC27" cx="39.963" cy="60.908" r="3.874"/>
+			</g>
+			<g>
+				<circle fill="#FFFFFF" cx="48.153" cy="57.462" r="8.869"/>
+				<circle fill="#EDCC27" cx="48.153" cy="57.462" r="5.912"/>
+			</g>
+			<g>
+				<circle fill="#FFFFFF" cx="55.104" cy="60.661" r="8.563"/>
+				<circle fill="#EDCC27" cx="55.104" cy="60.661" r="5.708"/>
+			</g>
+			<g>
+				<circle fill="#FFFFFF" cx="63.361" cy="58.685" r="6.422"/>
+				<circle fill="#EDCC27" cx="63.361" cy="58.685" r="3.511"/>
+			</g>
+			<g>
+				<circle fill="#FFFFFF" cx="68.963" cy="61.908" r="5.81"/>
+				<circle fill="#EDCC27" cx="68.963" cy="61.908" r="2.712"/>
+			</g>
+			<g>
+				<circle fill="#FFFFFF" cx="72.963" cy="64.908" r="5.199"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="coffee">
+	<g>
+		<g opacity="0.5">
+			<circle cx="112.64" cy="21.014" r="16.82"/>
+			<path d="M132.71,35.161c-0.705,0.949-2.046,1.147-2.995,0.442l-5.646-4.194c-0.949-0.705-1.147-2.046-0.442-2.995l0,0
+				c0.705-0.949,2.046-1.147,2.995-0.442l5.646,4.194C133.217,32.871,133.415,34.212,132.71,35.161L132.71,35.161z"/>
+		</g>
+		<g>
+			<g>
+				<circle fill="#FFFFFF" cx="111.64" cy="18.014" r="16.82"/>
+				<path fill="#FFFFFF" d="M131.71,32.161c-0.705,0.949-2.046,1.147-2.995,0.442l-5.646-4.194
+					c-0.949-0.705-1.147-2.046-0.442-2.995l0,0c0.705-0.949,2.046-1.147,2.995-0.442l5.646,4.194
+					C132.217,29.871,132.415,31.212,131.71,32.161L131.71,32.161z"/>
+			</g>
+			<circle fill="#332D14" cx="111.64" cy="18.014" r="14.373"/>
+			<path fill="#443A17" d="M124.411,14.883c-0.702-2.871-2.371-5.524-4.929-7.425c-5.83-4.331-14.067-3.116-18.398,2.714
+				c-1.327,1.787-2.128,3.8-2.44,5.857C105.804,9.885,116.44,9.201,124.411,14.883z"/>
+		</g>
+	</g>
+</g>
+</svg>
