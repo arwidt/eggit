@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./bin/www"
   },
   "author": "Arwid Thornstrom",
   "license": "ISC",
@@ -30,5 +31,9 @@
     "jquery.transit": "^0.9.12",
     "snapsvg": "^0.3.0",
     "underscore": "^1.6.0"
+  },
+  "subdomain": "eggit",
+  "engines": {
+    "node": "0.10.x"
   }
 }

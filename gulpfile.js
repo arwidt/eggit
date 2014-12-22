@@ -76,7 +76,7 @@ gulp.task('gfx', function() {
 gulp.task('server', function() {
 	connect.server({
 		root: 'public',
-		port: 8080,
+		port: 3000,
 		livereload: true
 	});
 });
