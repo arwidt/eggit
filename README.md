@@ -3,9 +3,9 @@ EGGIT
 
 Help you boil the perfect egg.
 
-Right now its a work in progress.
+Times are not actual times you should boil your eggs.
 
-The site can be viewed on [http://eggit.herokuapp.com/](http://eggit.herokuapp.com/ "http://eggit.herokuapp.com/")
+The site can be viewed on [http://eggit.thornstrom.it/](http://eggit.thornstrom.it/ "http://eggit.thornstrom.it/")
 
 Running gulp for development.
 
