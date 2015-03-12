@@ -1,16 +1,6 @@
-EGGIT
-=====
 
-Help you boil the perfect egg.
+## Prototype Base
 
-Times are not actual times you should boil your eggs.
+I use this for prototyping and testing frontend js libs and techniques.
 
-The site can be viewed on [http://eggit.thornstrom.it/](http://eggit.thornstrom.it/ "http://eggit.thornstrom.it/")
-
-Running gulp for development.
-
-`gulp watch`
-
-To run the app
-
-`./bin/www`
+The base is running Gulp, Browserify, Stampit, Backbone ...

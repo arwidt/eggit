@@ -1,0 +1,80 @@
+
+script(type=["text/template"] id=["template_start"])
+    div(class=['col-xs-12'])
+        div(class=['col-xs-12 start_desc'])
+            p(class=['centered']) <%= desc %>
+        div(class=['col-xs-12 z-20 start_eggs '])
+            div#softbtn(class=['btn col-xs-4'])
+                +img_softegg
+            div#mediumbtn(class=['btn col-xs-4'])
+                +img_mediumegg
+            div#hardbtn(class=['btn col-xs-4'])
+                +img_hardegg
+
+script(type=["text/template"] id=["template_eggsize"])
+    div(class=['col-xs-12'])
+        div(class=['col-xs-12 size_desc'])
+            p(class=['centered']) <%= desc %>
+        div(class=['col-xs-12 z-20 size_eggs'])
+            div#smallbtn(class=['btn col-xs-4'])
+                +svg_sizeegg
+            div#medbtn(class=['btn col-xs-4'])
+                +svg_sizeegg
+            div#bigbtn(class=['btn col-xs-4'])
+                +svg_sizeegg
+        div(class=['col-xs-2'])
+        div(class=['col-xs-8 size_extra'])
+            p(class=['centered']) <%= extra %>
+
+script(type=["text/template"] id=["template_prep"])
+    div(class=['prep_gfx col-xs-12 col-sm-6'])
+        div(class=['col-xs-1 visible-xs'])
+        div(class=['col-xs-10 col-sm-12'])
+            +svg_prep_illu
+    div(class=['col-xs-1 visible-xs'])
+    div(class=['prep_desc col-xs-10 col-sm-6'])
+        p <%= desc %>
+    div(class=['prep_btn col-xs-12'])
+        button(type="button" class=["btn btn-default btn-block"]) <%= btnlabel %>
+
+script(type=["text/template"] id=["template_boil"])
+    div(class=['step_boil col-md-12'])
+        div(class=['col-xs-12 centered boil_desc'])
+            p <%= desc %>
+        div(class=['col-xs-2'])
+        div(class=['col-xs-8'])
+            div#clock
+                +svg_clock
+
+script(type=["text/template"] id=["template_rinse"])
+    div(class=['step_rinse col-md-12'])
+        div(class=['col-xs-12 centered rinse_desc'])
+            p <%= desc %>
+        div(class=['col-xs-2'])
+        div(class=['col-xs-8'])
+            div#clock
+                +svg_clock
+
+script(type=["text/template"] id=["template_wait"])
+    div(class=['step_wait col-md-12'])
+        div(class=['col-xs-12 centered wait_desc'])
+            p <%= desc %>
+        div(class=['col-xs-2'])
+        div(class=['col-xs-8'])
+            div#clock
+                +svg_clock
+
+script(type=["text/template"] id=["template_end"])
+    div(class=['step_end col-md-12'])
+        div(class=['col-xs-12 centered end_desc'])
+            p <%= desc %>
+        div(class=['col-xs-2'])
+        div(class=['end_gfx col-xs-8'])
+            +svg_breakfast
+        div(class=['col-xs-12 end_extra'])
+            p(class=['centered']) <%= extra %>
+
+
+
+
+
