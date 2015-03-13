@@ -30,7 +30,7 @@ gulp.task('_js', function () {
     });
 
     gulp
-    	.src(['./src/js/**/*.js'])
+    	.src(js_src)
         .pipe(browserified.on('error', gutil.log))
         //.pipe(uglify())
         .pipe(concat('app.min.js'))
