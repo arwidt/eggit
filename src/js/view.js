@@ -30,6 +30,8 @@ var ViewStamp = Backbone.View.extend({
         this.el = $('#apparea');
         this.bottom_btn = $('.bottom_btn');
         this.bottom_btn.css({opacity: 0, y: 10});
+        this.bottom_btn.removeClass('hidden');
+
         $(this.bottom_btn).find('button').click(function() {
             that.model.stop_time();
             that.model.set({
