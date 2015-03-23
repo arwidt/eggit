@@ -34,9 +34,9 @@ module.exports = stampit({
         btnlabel: 'KEEP BOILING'
     },
     time: {
-        boil: 30,
-        rinse: 30,
-        wait : 30,
+        boil: (60*7) + 40,
+        rinse: 60,
+        wait : 60,
         typefactor: {
             soft: 0.9,
             medium: 1.0,

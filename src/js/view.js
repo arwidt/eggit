@@ -1,6 +1,7 @@
 'use strict';
 
 var stampit = require('stampit');
+var _clock = require('./clock.js');
 
 var $ = require('jquery');
 var _ = require('underscore');
@@ -20,13 +21,9 @@ var ViewStamp = Backbone.View.extend({
     app: null,
 
     initialize: function(app) {
-        console.log("initialize view");
-        
         this.app = app;
         this.model = this.app.model;
         this.settings = this.app.settings;
-
-        console.log("from view:", this.model.cid);
 
         var that = this;
 
@@ -34,9 +31,9 @@ var ViewStamp = Backbone.View.extend({
         this.bottom_btn = $('.bottom_btn');
         this.bottom_btn.css({opacity: 0, y: 10});
         $(this.bottom_btn).find('button').click(function() {
-            this.model.stop_time();
-            this.model.set({
-                typeData: this.app.settings.start,
+            that.model.stop_time();
+            that.model.set({
+                typeData: that.settings.start,
                 currentStep: 'start'});
         });
 
@@ -58,7 +55,6 @@ var ViewStamp = Backbone.View.extend({
     },
 
     change_currentStep: function() {
-        console.log("EVENT change:currentStep", this.model.get('currentStep'));
         var that = this;
         var typeData;
         switch(this.model.get('currentStep')) {
@@ -187,7 +183,7 @@ var ViewStamp = Backbone.View.extend({
                     that.el.css({x: 10});
                     that.el.html(_.template(that.templates.boil.html())(typeData));
 
-                    that.clock = new app.EggitClock("#clock_svg", 90);
+                    that.clock = new _clock("#clock_svg", 90);
                     that.clock.update_time(that.model.get('boiltime'));
 
                     that.show_bottom_btn(typeData.btnlabel);
@@ -206,7 +202,7 @@ var ViewStamp = Backbone.View.extend({
                     that.el.css({x: 10});
                     that.el.html(_.template(that.templates.rinse.html())(typeData));
 
-                    that.clock = new app.EggitClock("#clock_svg", 90);
+                    that.clock = new _clock("#clock_svg", 90);
                     that.clock.update_time(that.model.get('rinsetime'));
 
                     // Cancel
@@ -224,7 +220,7 @@ var ViewStamp = Backbone.View.extend({
                     that.el.css({x: 10});
                     that.el.html(_.template(that.templates.wait.html())(typeData));
 
-                    that.clock = new app.EggitClock("#clock_svg", 90);
+                    that.clock = new _clock("#clock_svg", 90);
                     that.clock.update_time(that.model.get('waittime'));
 
                 }).transition({opacity: 1, x: 0}, 500);
@@ -244,8 +240,10 @@ var ViewStamp = Backbone.View.extend({
 
     change_time: function() {
         
+        var that = this;
+
         var start_clock = function(sec) {
-            this.model.start_time(sec);
+            that.model.start_time(sec);
         };
 
         if (!this.clock) return;
@@ -258,28 +256,28 @@ var ViewStamp = Backbone.View.extend({
                     this.model.stop_time();
                     this.clock.alarm();
                     _.delay(function() {
-                        this.model.set({
-                            typeData: app.settings.rinse,
+                        that.model.set({
+                            typeData: that.settings.rinse,
                             currentStep: 'rinse'});
                     }, 3000);
-                    _.delay(start_clock, 5000, this.model.get('rinsetime'));
+                    _.delay(start_clock, 5000, that.model.get('rinsetime'));
                     break;
                 case 'rinse':
                     this.model.stop_time();
                     this.clock.alarm();
                     _.delay(function() {
-                        this.model.set({
-                            typeData: app.settings.wait,
+                        that.model.set({
+                            typeData: that.settings.wait,
                             currentStep: 'wait'});
                     }, 3000);
-                    _.delay(start_clock, 5000, this.model.get('waittime'));
+                    _.delay(start_clock, 5000, that.model.get('waittime'));
                     break;
                 case 'wait':
                     this.model.stop_time();
                     this.clock.alarm();
                     _.delay(function() {
-                        this.model.set({
-                            typeData: app.settings.end,
+                        that.model.set({
+                            typeData: that.settings.end,
                             currentStep: 'end'});
                     }, 3000);
                     break;

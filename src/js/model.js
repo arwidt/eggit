@@ -30,7 +30,6 @@ var ModelStamp = Backbone.Model.extend({
     
     initialize: function(app) {
         this.app = app;
-        console.log('initialize model');
     },
 
     // Set the boil, rinse and wait times depending
@@ -53,15 +52,12 @@ var ModelStamp = Backbone.Model.extend({
 
     // TIMER
     start_time: function(time_val) {
-        console.log("start_time", time_val);
-
         var that = this;
         this.set({time: time_val});
-        this.attributes.timer = setInterval(function() { that.update_timer(); }, 50);
+        this.attributes.timer = setInterval(function() { that.update_timer(); }, 1000);
     },
 
     stop_time: function() {
-        console.log("stop_time");
         clearInterval(this.attributes.timer);
     },
 

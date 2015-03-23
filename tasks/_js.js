@@ -32,7 +32,7 @@ gulp.task('_js', function () {
     gulp
     	.src(js_src)
         .pipe(browserified.on('error', gutil.log))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest('./dist/js/'))
         .pipe(connect.reload());
