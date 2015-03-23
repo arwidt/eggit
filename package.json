@@ -1,15 +1,18 @@
 {
-  "name": "prototypeproject",
+  "name": "Eggit",
   "version": "1.0.0",
-  "description": "prototypeproject ===================",
+  "description": "===================",
   "main": "./bin/www",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./bin/www"
   },
+  "engines": {
+    "node": ">=0.10.33 <0.12"
+  },
   "author": "Arwid Thornstrom",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "eggit.thornstrom.it",
   "devDependencies": {
     "assert": "^1.3.0",
     "bower-files": "^3.4.4",
