@@ -15,6 +15,8 @@ var app = app || {};
 $(function() {
     'use strict';
 
+    $('.bottom_btn').css({opacity: 0, y: 10});
+
     app.settings = _settings();
     app.model = new _model(app);
     app.view = new _view(app);
