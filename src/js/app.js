@@ -12,7 +12,7 @@ var _clock = require('./clock.js');
 
 var app = app || {};
 
-$(function() {
+$(document).ready(function() {
     'use strict';
 
     app.settings = _settings();
@@ -23,6 +23,5 @@ $(function() {
     app.model.set({
         typeData: app.settings.start,
         currentStep: 'start'});
-    
-});
 
+});
