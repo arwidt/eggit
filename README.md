@@ -1,6 +1,4 @@
 
-## Prototype Base
+# EGGIT
 
-I use this for prototyping and testing frontend js libs and techniques.
-
-The base is running Gulp, Browserify, Stampit, Backbone ...
+Just a howto boil an egg.
