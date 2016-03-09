@@ -1,0 +1,36 @@
+%card-item, .card-item {
+	@extend %card;
+	width: 100%;
+	float: left;
+	padding: 0 20px 15px;
+}
+
+%inner-card-padding {
+	padding: 0 20px 15px;	
+}
+
+%card {
+	background-color: get-color(general, lightest);
+	box-shadow: inset 0px 0px 0px 1px get-color(general, light);
+}
+
+%card-item-no-padding {
+	@extend %card;
+	width: 100%;
+	float: left;
+}
+
+%full-width-card-content {
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+%full-width-negator {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+%inner-card-content {
+	@include full(no-gutters);
+	@extend %inner-card-padding;
+}

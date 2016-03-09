@@ -1,0 +1,114 @@
+/*doc
+---
+title: get-wrapper-width
+name: get-wrapper-width
+category: Mixins
+---
+
+Calculate wrapper width to accomodate for different ad sizes. Based on body classes.
+
+   	.site-wrapper {
+		@include container(get-wrapper-width());
+   	}
+
+
+*/
+
+@mixin get-wrapper-width() {
+
+	@each $ad-type, $params in $ads {
+
+		$ad-width: map-get-deep($params, width);
+
+		.#{$ad-type} & {
+
+			@include container($ad-width);
+
+		}
+
+	}
+}
+
+/*doc
+---
+title: font-size-rem
+name: font-size-rem
+category: Mixins
+---
+
+Mixin to generate rem font-size with pixel fallback. Assumes 62.5% font-size on html element.
+
+   	p {
+		@include font-size-rem(1.6);
+   	}
+
+This outputs
+
+   	p {
+		font-size: 16px;
+		font-size: 1.6rem;
+   	}
+
+*/
+
+
+@mixin font-size-rem($sizeValue: 1.6) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+/*doc
+---
+title: get-text-color-from-theme
+name: get-text-color-from-theme
+category: Mixins
+---
+
+Mixin to generate theme specific links (colors etc). Use on parent with n55-theme--theme-name applied. Alternative to the opt-in version based on data attributes, necessary because of limitations in Wordpress menu builder.
+
+Accepts a string of one or more selectors to apply the color to. If no string are providedm it defaults to 'a:hover'.
+
+   	li {
+		get-text-color-from-theme('.active, a:hover');
+   	}
+
+
+*/
+
+@mixin get-text-color-from-theme($custom-selectors) {
+
+	$get-text-color-from-theme-selectors: "a:hover" !default;
+
+	@if(length($custom-selectors) > 0) {
+
+		$get-text-color-from-theme-selectors: unquote($custom-selectors);
+	}
+
+	@each $theme, $params in $themes {
+
+		&.#{$theme} {
+			#{$get-text-color-from-theme-selectors} {
+				color: map-get($params, color);
+			}
+		}
+	}
+}
+
+/*
+    ICON MIXIN
+    - For adding an icon.
+*/
+
+@mixin icon($character: 'c', $color: #000) {
+    &:before {
+        font-family: get-font(icon);
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        content: $character;
+        speak: none;
+        line-height: 1;
+        color: $color;
+    }
+}

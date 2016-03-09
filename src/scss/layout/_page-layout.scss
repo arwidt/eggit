@@ -1,0 +1,103 @@
+/*doc
+---
+title: _page-layout.scss
+name: _page-layout.scss
+category: Layouts
+---
+
+Layout for general page content.
+
+*/
+
+.wrapper {
+	
+	@include container();
+
+	@include breakpoint($show-ad-site-side){
+		@include container(1300px);
+		width: 1300px;
+		padding: 0 20px;
+	}
+}
+
+.main-content-wrapper {
+	@extend %container-standard;
+	
+}
+
+.page-main-feed {
+	
+	@include span(6);
+
+	@include breakpoint($ipad-vertical) {
+		@include span(4);
+	}
+
+	@include breakpoint($ipad-horizontal) {
+		@include span(660px no-gutters);
+		margin-right: 20px;
+		padding: 0;
+	}
+	
+}
+
+.page-sidebar {
+	
+	@include span(6);
+
+	@include breakpoint($ipad-vertical) {
+		@include span(2);
+	}
+
+	@include breakpoint($ipad-horizontal) {
+		@include span(320px no-gutters);
+		padding: 0;
+	}
+	
+}
+
+.main-article-wrapper {
+	@extend %card-item-no-padding;
+	margin-bottom: 20px;
+
+	@include breakpoint($ipad-vertical) {
+		margin-bottom: 0;
+	}
+}
+
+.main-article__footer-contact {
+	@include span(4 of 4);
+
+	@include breakpoint($ipad-vertical) {
+		@include span(2 of 4 after);
+		border-right: get-border(general);	
+	}
+	
+}
+
+.main-article__meta-content {
+	@include span(4 of 4);
+
+	@include breakpoint($ipad-vertical) {
+		@include span(last 2 of 4 after);
+	}
+}
+
+.main-article__meta-content--tt {
+	@include span(4 of 4 no-gutters);
+	padding-left: 0;
+}
+
+.main-extras {
+	@extend %inner-card-content;
+}
+
+.related-articles {
+	@extend %inner-card-content;
+}
+
+.main-section-header {
+	@include font-size-rem(2.4);
+	@include full();
+	padding-left: gutter();
+}

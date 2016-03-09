@@ -1,0 +1,16 @@
+.footer-menu {
+	@extend %unstyled-list;
+	margin-top: 0;
+}
+
+.footer-menu__menu-item {
+	margin-top: 10px;
+
+	a {
+		color: inherit;
+
+		&:hover {
+			color: get-color(typography, link);
+		}
+	}
+}

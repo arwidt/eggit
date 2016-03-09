@@ -16,12 +16,6 @@ var js_src = [
     '!**/*.test.js'
     ];
 
-gulp.task('_jshint', function() {
-    gulp.src(js_src) 
-        .pipe(jshint())
-        .pipe(jshint.reporter());
-});
-
 gulp.task('_js', function () {
 
     var browserified = transform(function(filename) {
@@ -39,13 +33,11 @@ gulp.task('_js', function () {
 
 });
 
-gulp.task('_libs', function() {
+gulp.task('_js:watch', function() {
 
-	// gulp
-	// 	.src('./src/lib/**/*.js')
-	// 	//.pipe(uglify())
-	// 	.pipe(concat('lib.min.js'))
-	// 	.pipe(gulp.dest('./dist/js/'))
-	// 	.pipe(connect.reload());
+	var watcher = gulp.watch(js_src, ['_js']);
+	watcher.on('change', function(event) {
+		console.log("JS: " + event.path + " was " + event.type + " reloading!");
+	});
 
 });

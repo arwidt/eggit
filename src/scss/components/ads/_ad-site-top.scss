@@ -1,0 +1,30 @@
+.ad-site-top {
+	@extend %margin-bottom;
+
+	img {
+		max-width: none;
+	}
+
+	@include breakpoint($ipad-vertical ($ipad-horizontal - 1)){
+		display: none;
+	}
+
+	@include breakpoint($ipad-vertical ($show-ad-site-panorama - 1)){
+		//display: none; // Quick fix because there is no min-size ad yet
+		float: none;
+		width: 1000px;
+		margin: 0 auto 20px;
+	}
+
+}
+
+.ad-site-top__ad-header {
+
+	display: none;
+
+	@include breakpoint($lg) {
+		display: inline;
+		@extend %ad-header;
+	}
+	
+}

@@ -1,0 +1,416 @@
+/*doc
+---
+title: typography-standard
+name: typography-standard
+category: Extends - Typography Extends
+---
+
+Base typography extend. Used on body to set defaults.
+
+*/
+
+%typography-standard, .typography-standard {
+	@include font-size-rem(1.6);
+	color: get-color(typography, paragraph);
+	font-family: get-font(sans-serif);
+	font-weight: get-font-weight(book);
+	line-height: get-line-height(base);
+}
+
+
+/*doc
+---
+title: link-standard
+name: link-standard
+category: Extends - Typography Extends
+---
+
+*/
+
+%link-standard, .link-standard {
+	color: get-color(typography, link);
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+/*doc
+---
+title: link-site-menu
+name: link-site-menu
+category: Extends - Typography Extends
+---
+
+Site menu link extend.
+
+
+*/
+
+%link-site-menu, .link-site-menu {
+	color: get-color(brand, secondary);
+	font-weight: get-font-weight(semi-bold);
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+/*doc
+---
+title: link-passive
+name: link-passive
+category: Extends - Typography Extends
+---
+
+Passive link extend. Mainyl used in news list boxes.
+
+
+*/
+
+%link-passive, .link-passive {
+	color: get-color(typography, link-passive);
+	font-weight: get-font-weight(book);
+}
+
+/*doc
+---
+title: main-article-header
+name: main-article-header
+category: Extends - Typography Extends
+---
+
+Headers for main articles and pages.
+
+
+*/
+
+%main-article-header, .main-article-header {
+	@include font-size-rem(3.4);
+	line-height: 1.2;
+	color: get-color(typography, header-primary);
+}
+
+/*doc
+---
+title: ad-header
+name: ad-header
+category: Extends - Typography Extends
+---
+
+Header for ad blocks.
+
+
+*/
+
+%ad-header, .ad-header {
+	@include font-size-rem(1);
+	text-transform: uppercase;
+	color: get-color(typography, header-secondary);
+	font-weight: get-font-weight(book);
+}
+
+/*doc
+---
+title: section-header-secondary
+name: section-header-secondary
+category: Extends - Typography Extends
+---
+
+Header for sidebar cards etc.
+
+*/
+
+%section-header-secondary, .section-header-secondary {
+	@include font-size-rem(1.6);
+	color: get-color(typography, header-secondary);
+	font-weight: get-font-weight(bold);
+	margin: 0;
+}
+
+/*doc
+---
+title: enhanced-paragraph
+name: enhanced-paragraph
+category: Extends - Typography Extends
+---
+
+Slightly bolder paragraph part. Mainyl used for date strings in sidebar cards.
+
+*/
+
+%enhanced-paragraph, .enhanced-paragraph {
+	color: get-color(typography, header-primary);
+	font-weight: get-font-weight(bold);
+}
+
+/*doc
+---
+title: image-caption-text
+name: image-caption-text
+category: Extends - Typography Extends
+---
+
+Used for image captions.
+
+*/
+
+%image-caption-text, .image-caption-text {
+	font-family: get-font(serif);
+	font-style: italic;
+	color: get-color(typography, header-secondary);
+}
+
+/*doc
+---
+title: byline-name-text
+name: byline-name-text
+category: Extends - Typography Extends
+---
+
+Used for byline names.
+
+*/
+
+%byline-name-text, .byline-name-text {
+	font-weight: get-font-weight(bold);
+	color: get-color(typography, header-primary);
+}
+
+/*doc
+---
+title: feed-header
+name: feed-header
+category: Extends - Typography Extends
+---
+
+Header for news feed cards.
+
+*/
+
+%feed-header, .feed-header {
+	@include font-size-rem(3.8);
+	line-height: 1.2;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: get-font-weight(bold);
+	color: get-color(typography, header-primary);
+}
+
+
+/*doc
+---
+title: article-theme-header
+name: article-theme-header
+category: Extends - Typography Extends
+---
+
+Header for article group theme headers.
+
+*/
+
+%article-theme-header, .article-theme-header {
+	@include font-size-rem(1.8);
+	font-weight: get-font-weight(bold);
+	color: get-color(typography, link-passive);
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*doc
+---
+title: article-theme-counter-text
+name: article-theme-counter-text
+category: Extends - Typography Extends
+---
+
+Text for article group counters.
+
+*/
+
+%article-theme-counter-text, .article-theme-counter-text {
+	@extend %small-paragraph;
+	font-weight: get-font-weight(book);
+	color: get-color(typography, link-passive);
+}
+
+/*doc
+---
+title: large-paragraph
+name: large-paragraph
+category: Extends - Typography Extends
+---
+
+Larger paragraph text.
+
+*/
+
+%large-paragraph, .large-paragraph {
+	@include font-size-rem(1.8);
+}
+
+/*doc
+---
+title: medium-weight-paragraph
+name: medium-weight-paragraph
+category: Extends - Typography Extends
+---
+
+Semibold text.
+
+*/
+
+%medium-weight-paragraph, .medium-weight-paragraph {
+	font-weight: get-font-weight(semi-bold);
+}
+
+/*doc
+---
+title: %bold-weight-paragraph
+name: %bold-weight-paragraph
+category: Extends - Typography Extends
+---
+
+Bold text.
+
+*/
+
+%bold-weight-paragraph, .bold-weight-paragraph {
+	font-weight: get-font-weight(bold);
+}
+
+/*doc
+---
+title: %teaser-header
+name: %teaser-header
+category: Extends - Typography Extends
+---
+
+Bold text.
+
+*/
+
+%teaser-header, .teaser-header {
+	@include font-size-rem(1.8);
+	font-weight: get-font-weight(bold);
+	color: get-color(typography, header-secondary);
+
+}
+
+/*doc
+---
+title: %preamble-paragraph
+name: %preamble-paragraph
+category: Extends - Typography Extends
+---
+
+Text for article preambles.
+
+*/
+
+%preamble-paragraph, .preamble-paragraph {
+	@include font-size-rem(2);
+	line-height: 1.3;
+	font-weight: get-font-weight(bold);
+}
+
+/*doc
+---
+title: %small-paragraph
+name: %small-paragraph
+category: Extends - Typography Extends
+---
+
+Small paragraph text.
+
+*/
+
+%small-paragraph, .small-paragraph {
+	@include font-size-rem(1.4);
+}
+
+/*doc
+---
+title: %normal-paragraph
+name: %normal-paragraph
+category: Extends - Typography Extends
+---
+
+Small paragraph text.
+
+*/
+
+%normal-paragraph, .normal-paragraph {
+	@include font-size-rem(1.6);
+}
+
+/*doc
+---
+title: %toolbar-text
+name: %toolbar-text
+category: Extends - Typography Extends
+---
+
+Article toolbar text.
+
+*/
+
+%toolbar-text, .toolbar-text {
+	@include font-size-rem(1.5);
+	font-weight: get-font-weight(semi-bold);
+}
+
+/*doc
+---
+title: %article-extras-header
+name: %article-extras-header
+category: Extends - Typography Extends
+---
+
+Header for article asides etc.
+
+*/
+
+%article-extras-header, .article-extras-header {
+	@include font-size-rem(1.6);
+	font-weight: get-font-weight(bold);
+}
+
+/*doc
+---
+title: %super-small-paragraph
+name: %super-small-paragraph
+category: Extends - Typography Extends
+---
+
+Very small text, used in end credits in footer.
+
+*/
+
+%super-small-paragraph, .super-small-paragraph {
+	@include font-size-rem(1.2);
+	line-height: 1.4;
+}
+
+/*doc
+---
+title: %article-module-header
+name: %article-module-header
+category: Extends - Typography Extends
+---
+
+Very small text, used in end credits in footer.
+
+*/
+
+%article-module-header, .article-module-header {
+	@include font-size-rem(2.8);
+	font-weight: get-font-weight(bold);
+	line-height: 1.4;
+}
+
+	

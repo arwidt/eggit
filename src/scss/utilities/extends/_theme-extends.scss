@@ -1,0 +1,34 @@
+%theme-border {
+
+	&[data-n55-theme="n55-theme--news-articles"] {
+		border-top: get-border(theme, n55-news-articles);
+	}
+
+	&[data-n55-theme="n55-theme--thoughts"] {
+		border-top: get-border(theme, n55-thoughts);
+	}
+
+	&[data-n55-theme="n55-theme--cover-stories"] {
+		border-top: get-border(theme, n55-cover-stories);
+	}
+
+	&[data-n55-theme="n55-theme--debate-articles"] {
+		border-top: get-border(theme, n55-debate-articles);
+	}
+
+	&[data-n55-theme="n55-theme--puzzle-articles"] {
+		border-top: get-border(theme, n55-puzzle-articles);
+	}
+
+	&[data-n55-theme="n55-theme--pod-articles"] {
+		border-top: get-border(theme, n55-pod-articles);
+	}
+
+	&.main-article {
+		border-width: 0;
+
+		@include breakpoint($ipad-vertical){
+			border-width: 5px;
+		}
+	}
+}

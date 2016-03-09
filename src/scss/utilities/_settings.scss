@@ -1,0 +1,80 @@
+/*doc
+---
+title: Breakpoint Settings
+name: Breakpoint Settings
+category: Settings
+---
+
+Main settings for grid breakpoints. 
+
+	.my-container {
+		@include container();
+
+		@include breakpoint($lg){
+			@include container($container-lg);
+		}
+	}
+
+*/
+
+
+// BREAKPOINTS
+
+$sm:						768px;
+$md:						992px;
+$lg:						1020px; 
+
+$ipad-vertical: 			768px;
+$ipad-horizontal: 			1024px;
+
+$switch-header: 			$ipad-vertical + 1; 			
+
+$show-ad-site-top:			1000px;	
+$show-ad-site-side:			1290px;
+
+$hide-ad-top-mobile: 		$ipad-vertical;		
+$show-ad-site-panorama:		1290px;
+
+
+
+
+// CONTAINERS
+
+$container-sm:	750px;
+$container-md:	970px;
+$container-lg:	1010px;
+
+
+/*doc
+---
+title: Susy Settings
+name: Susy Settings
+category: Settings
+---
+
+Main settings for Susy grid. 
+
+```css_example
+    $susy: (
+	  columns: 6,
+	  debug: (
+		image: hide
+	  ),
+	  gutters: 0.15,
+	  gutter-position: inside,
+	  global-box-sizing: border-box
+	);
+```
+
+*/
+
+
+$susy: (
+  columns: 6,
+  debug: (
+	image: hide
+  ),
+  gutters: 0.15,
+  gutter-position: inside,
+  global-box-sizing: border-box
+);

@@ -13,3 +13,12 @@ gulp.task('_jade', function() {
         .pipe(connect.reload());
 
 });
+
+gulp.task('_jade:watch', function() {
+
+	var watcher = gulp.watch(['./src/**/*.jade'], ['_jade']);
+	watcher.on('change', function(event) {
+		console.log("JADE: " + event.path + " was " + event.type + " reloading!");
+	});
+
+});

@@ -1,0 +1,229 @@
+.featured-image {
+	margin-bottom: 10px;
+
+	.news-feed-article__group-article[data-n55-feed-layout="n55-feed-layout--full"] & {
+		margin-bottom: 0;
+
+		@include breakpoint($ipad-horizontal){
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.featured-image--main-image {
+	@extend %full-width-card-content;
+	
+
+	[data-n55-feed-layout="n55-feed-layout--compressed"] & {
+		
+		@include span(last 100px no-gutters);
+		margin-left: 10px;	
+		margin-right: 0;
+		margin-top: 10px;
+		position: relative;
+
+		@include breakpoint($ipad-horizontal){
+			@include span(last 200px no-gutters);
+			margin-left: 0;	
+		}
+	}
+}
+
+.featured-image--article-teaser {
+	@extend %full-width-card-content;
+}
+
+.featured-image--teaser-image {
+	@include span(first 100px no-gutters);
+	margin-right: 0;
+	margin-bottom: 0;
+	position: relative;
+
+	@include breakpoint($ipad-vertical) {
+		@include span(first 80px no-gutters);	
+	}
+
+	@include breakpoint($ipad-horizontal) {
+		@include span(first 100px no-gutters);	
+	}
+	
+	.teaser__list-item--enhanced & {
+		width: 100%;
+		height: auto;
+		@extend %margin-bottom-reduced;
+	}
+}
+
+.featured-image__image {
+	margin-bottom: 5px;
+	width: 100%;
+	
+	[data-n55-feed-layout="n55-feed-layout--half"] & {
+
+		@include breakpoint($ipad-vertical) {
+			margin-bottom: 0;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);	
+		}
+		
+	}
+}
+
+.featured-image__image--article-group {
+
+	[data-n55-feed-layout="n55-feed-layout--full"] & {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.featured-image__caption {
+	@extend %full-width-negator;
+	@extend %image-caption-text;
+	@include font-size-rem(1.2);
+	visibility: hidden;
+	text-align: right;
+
+	&:empty {
+		height: 15px;
+	}
+	
+	@include breakpoint($ipad-horizontal) {
+		visibility: visible;
+	}
+
+	[data-n55-feed-layout="n55-feed-layout--half"] & {
+		display: none;
+
+		@include breakpoint($ipad-horizontal) {
+			display: block;
+		}	
+	}
+
+	.featured-image--main-image & {
+		
+		[data-n55-feed-layout="n55-feed-layout--compressed"] & {
+			display: none;
+
+			@include breakpoint($ipad-horizontal) {
+				display: block;
+			}	
+		}
+	}
+
+	.news-feed-article__group-article[data-n55-feed-layout="n55-feed-layout--full"] & {
+		display: none;
+
+		@include breakpoint($ipad-horizontal) {
+			display: block;
+		}	
+	}
+
+	.main-article & {
+		visibility: visible;
+	}
+	
+}
+
+.featured-image__caption--teaser {
+	font-weight: get-font-weight(book);
+}
+
+.featured-image__image-container {
+	
+	[data-n55-feed-layout="n55-feed-layout--compressed"] & {
+		
+		overflow: hidden;
+		position: relative;
+		margin-bottom: 5px;
+		height: 59px;
+
+		@include breakpoint($ipad-horizontal) {
+			height: 118px;
+		}
+		
+	}
+
+	[data-n55-feed-layout="n55-feed-layout--half"] & {
+		//height: 100px;
+
+		@include breakpoint($ipad-vertical) {
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 5px;
+			height: 115px;	
+		}
+
+		@include breakpoint($ipad-horizontal) {
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 5px;
+			height: 188px;	
+		}
+	}
+}
+
+.featured-image__image-container--article-teaser {
+	height: 188px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 5px;
+
+	@include breakpoint($ipad-vertical ($ipad-horizontal - 1)){
+		height: 115px;
+	}
+}
+
+.featured-image__image-container--teaser-image {
+	height: 57px;
+	overflow: hidden;
+	position: relative;
+	
+	.teaser__list-item--enhanced & {
+		height: 162px;
+		overflow: hidden;
+		position: relative;
+		margin-bottom: 10px;
+
+		@include breakpoint($ipad-vertical ($ipad-horizontal - 1)) {
+			height: 100px;
+		}
+	}
+
+
+}
+
+.featured-image__image--teaser-image,
+.featured-image__image--article-teaser {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.featured-image__image-container--article-group {
+
+	[data-n55-feed-layout="n55-feed-layout--half"] & {
+		height: 100px;
+		overflow: hidden;
+		position: relative;
+		margin-bottom: 5px;
+
+		@include breakpoint($ipad-horizontal) {
+			height: 175px;
+		}
+	}
+
+	[data-n55-feed-layout="n55-feed-layout--full"] & {
+		height: 100px;
+		overflow: hidden;
+		position: relative;
+		margin-bottom: 5px;
+
+		@include breakpoint($ipad-horizontal) {
+			height: 175px;
+		}
+	}
+
+}

@@ -1,0 +1,22 @@
+%container-standard {
+
+	@include container();
+
+	@include breakpoint($ipad-vertical) {
+		@include container($container-sm);
+	}
+
+	/*@include breakpoint($md) {
+		@include container($container-md);
+	}*/
+
+	@include breakpoint($ipad-horizontal) {
+		@include container($container-lg);
+		//margin-left: 0;	
+	}
+
+	@include breakpoint($show-ad-site-side) {
+		margin-left: 0;	
+	}
+
+}

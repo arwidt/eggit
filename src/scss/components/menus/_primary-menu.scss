@@ -1,0 +1,43 @@
+/*doc
+---
+title: Primary Menu
+name: primary-menu
+category: navigation - menus
+---
+
+The primary menu in site header. 
+
+*/
+
+.primary-menu {
+	@extend %inline-list;
+	padding: 1em 0;
+}
+
+.primary-menu__menu-item {
+	
+	a {
+		@extend %link-site-menu;
+	}
+
+	@include get-text-color-from-theme('&.current-menu-item a, a:hover');
+
+	.primary-menu--mobile & {
+		@include get-text-color-from-theme('a');
+		@include font-size-rem(1.4);
+		padding: 0 10px;
+		border-right: get-border(general); 
+		margin: 0;
+
+		&:last-child {
+			border-right: 0;
+		}
+
+		&.current-menu-item a {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+

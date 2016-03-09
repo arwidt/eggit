@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	background-color: get-color(general, contrast-light);
+}
+
+
+/*doc
+---
+title: screen-reader-text
+name: screen-reader-text
+category: Helpers
+---
+
+Helper class for texts that are screen reader only. Mainly used for hidden headers in document layout.
+
+```html_example
+    <h3 class='screen-reader-text'>Main menu</h3>
+```
+
+*/
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+figure {
+	margin: 0;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+.hidden {
+	display: none;
+}
+
+.no-visibility {
+	opacity: 0;
+}

@@ -1,0 +1,8 @@
+.ad-site-feed {
+	display: none;
+
+	@include breakpoint($ipad-horizontal) {
+		display: block;
+		@extend %margin-bottom;
+	}
+}

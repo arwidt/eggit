@@ -1,0 +1,137 @@
+$colors: (
+	general: (
+		lightest: 				#ffffff,
+		light: 					#e6e9ee,
+		darkest: 				#000000,
+		contrast-light: 		#f1f1f1,
+		contrast-dark: 			#434a54,
+	),
+	brand: (
+		primary: 				#be1723,
+		secondary: 				#3c3c3b,
+	),
+	typography: (
+		paragraph: 				#434a54,
+		link: 					#4b89dc,
+		link-passive: 			#364252,
+		header-primary: 		#333333,
+		header-secondary: 		#656d78,
+		input-passive: 			#cccccc,
+		box-color: 				#f6f7f8
+	),
+	button: (
+		general: 				#1781be,
+		positive:	 			#8bc14f,
+		negative: 				#da4553
+	),
+	theme: (
+		n55-news-articles: 		#656d78,
+		n55-thoughts: 			#be1723,
+		n55-cover-stories: 		#1654a7,
+		n55-debate-articles: 	#e98134,
+		n55-puzzle-articles: 	#a30ea9,
+		n55-pod-articles: 		#37bb9b,
+		n55-default: 			#aab2bd
+	),
+	state: (
+		background-hover: 		#f9f9f9
+	),
+	social: (
+		facebook: 				#4d70a8,
+		twitter: 				#01baf2,
+		email: 					#69707b
+	)
+);
+
+@font-face {
+  font-family: "news55";
+  src:  url("../fonts/news55.eot");
+  src:  url("../fonts/news55.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/news55.woff") format("woff"),
+        url("../fonts/news55.ttf") format("truetype"),
+        url("../fonts/news55.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$fonts: (
+	sans-serif: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+	serif: "'Droid Serif', serif",
+	icon: "news55"
+);
+
+$font-weights: (
+	thin: 		300,
+	book: 		400,
+	semi-bold: 	500,
+	bold: 		700
+);
+
+$line-heights: (
+	base: 1.4
+);
+
+$borders: (
+	general: 1px solid get-color(general, light),
+	hidden: 1px solid get-color(general, lightest),
+	hidden-contrast: 1px solid get-color(state, background-hover),
+	byline: 4px solid get-color(general, lightest),
+	theme: (
+		n55-news-articles: 		5px solid get-color(theme, n55-news-articles),
+		n55-thoughts: 			5px solid get-color(theme, n55-thoughts),
+		n55-cover-stories: 		5px solid get-color(theme, n55-cover-stories),
+		n55-debate-articles: 	5px solid get-color(theme, n55-debate-articles),
+		n55-puzzle-articles: 	5px solid get-color(theme, n55-puzzle-articles),
+		n55-pod-articles: 		5px solid get-color(theme, n55-pod-articles),
+		n55-default: 			5px solid get-color(theme, n55-default)
+	)
+
+);
+
+$themes: (
+	n55-theme--news-articles: (
+		color: get-color(theme, n55-news-articles),
+		border: get-border(theme, n55-news-articles)
+	),
+	n55-theme--thoughts: (
+		color: get-color(theme, n55-thoughts),
+		border: get-border(theme, n55-thoughts),
+		icon: 'g'
+	),
+	n55-theme--cover-stories: (
+		color: get-color(theme, n55-cover-stories),
+		border: get-border(theme, n55-cover-stories)
+	),
+	n55-theme--debate-articles: (
+		color: get-color(theme, n55-debate-articles),
+		border: get-border(theme, n55-debate-articles)
+	),
+	n55-theme--puzzle-articles: (
+		color: get-color(theme, n55-puzzle-articles),
+		border: get-border(theme, n55-puzzle-articles)
+	),
+	n55-theme--pod-articles: (
+		color: get-color(theme, n55-pod-articles),
+		border: get-border(theme, n55-pod-articles),
+		icon: 'o'
+	),
+	n55-theme--default: (
+		color: get-color(theme, n55-default),
+		border: get-border(theme, n55-default)
+	)
+);
+
+$ads: (
+	outsider: (
+		width: $container-lg + 250px
+	),
+	outsider-inscreen: (
+		width: $container-lg + 430px
+	),
+	l-format: (
+		width: $container-lg + 250px
+	),
+	big-bang: (
+		width: $container-lg + 580px
+	)
+);

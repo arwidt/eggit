@@ -1,0 +1,41 @@
+.site-footer {
+	margin-top: 35px;
+	width: 100%;
+	background-color: get-color(general, lightest);
+	padding-top: 50px;
+}
+
+.site-footer__main-content {
+	@extend %container-standard;
+}
+
+.site-footer__address {
+	@include span(6);
+
+	@include breakpoint($ipad-vertical) {
+		@include span(2);
+		padding-right: span(.5);		
+	}
+
+}
+
+.site-footer__contact {
+	@include span(6);
+	@include breakpoint($ipad-vertical) {
+		@include span(2);
+		padding-right: span(.5);
+		padding-bottom: span(.3);
+	}
+}
+
+.site-footer__about {
+	@include span(6);
+	@include breakpoint($ipad-vertical) {
+		@include span(2);
+		padding-right: span(.5);
+	}
+}
+
+.site-footer__footbrow-content {
+	@extend %container-standard;
+}

@@ -1,0 +1,19 @@
+.facebook-icon {
+	@include icon('h', #4d70a8);
+	@include font-size-rem(3);
+}
+
+.twitter-icon {
+	@include icon('s', #01baf2);
+	@include font-size-rem(3);
+}
+
+.instagram-icon {
+	@include icon('j', #17557a);
+	@include font-size-rem(3);
+}
+
+.email-icon {
+	@include icon('l', #656d78);
+	@include font-size-rem(3);	
+}

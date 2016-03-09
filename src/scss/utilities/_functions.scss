@@ -1,0 +1,157 @@
+/*doc
+---
+title: get-font
+name: get-font
+category: Functions
+---
+
+Returns a parsed result from the font map.
+Sassy Maps dependecy. 
+
+   	p {
+		font-family: get-font(sans-serif);
+   	}
+
+This outputs
+
+   	p {
+		font-family: 'helvetica Neue', Helvetica, Arial, sans-serif;
+   	}
+
+*/
+
+@function get-font($keys...){
+	@return unquote(map-get-deep($fonts, $keys));
+}
+
+
+/*doc
+---
+title: get-color
+name: get-color
+category: Functions
+---
+
+Returns a parsed result from the color map.
+Sassy Maps dependecy.  
+
+   	p {
+		color: get-color(typography, paragraph);
+   	}
+
+This outputs
+
+   	p {
+		color: #434a54;
+   	}
+
+*/
+
+@function get-color($keys...){
+	@return map-get-deep($colors, $keys);
+}
+
+/*doc
+---
+title: get-font-weight
+name: get-font-weight
+category: Functions
+---
+
+Returns a parsed result from the font weight map.
+Sassy Maps dependecy.  
+
+   	p {
+		font-weight: get-font-weight(book);
+   	}
+
+This outputs
+
+   	p {
+		font-weight: 400;
+   	}
+
+*/
+
+@function get-font-weight($keys...){
+	@return map-get-deep($font-weights, $keys);
+}
+
+/*doc
+---
+title: get-line-height
+name: get-line-weight
+category: Functions
+---
+
+Returns a parsed result from the line height map.
+Sassy Maps dependecy.  
+
+   	p {
+		line-height: get-line-height(base);
+   	}
+
+This outputs
+
+   	p {
+		line-height: 1.4;
+   	}
+
+*/
+
+@function get-line-height($keys...){
+	@return map-get-deep($line-heights, $keys);
+}
+
+/*doc
+---
+title: get-theme-parameters
+name: get-border
+category: Functions
+---
+
+Returns a parsed result from the border map.
+Sassy Maps dependecy.  
+
+   	div {
+		border-bottom: get-border(primary);
+   	}
+
+This outputs
+
+   	div {
+		border-bottom: #e6e9ee;
+   	}
+
+*/
+
+@function get-border($keys...){
+	@return map-get-deep($borders, $keys);
+}
+
+/*doc
+---
+title: get-theme-parameters
+name: get-theme-parameters
+category: Functions
+---
+
+Returns a parsed result from the themes map.
+Sassy Maps dependecy.  
+
+   	div {
+		border-left: get-theme-parameter(n55-theme--news-articles, border);
+   	}
+
+This outputs
+
+   	div {
+		border-left: 5px solid #656d78;
+   	}
+
+*/
+
+@function get-theme-parameter($keys...){
+	@return map-get-deep($themes, $keys);
+}
+

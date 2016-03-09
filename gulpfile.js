@@ -1,20 +1,26 @@
 
 var gulp = require('gulp');
 var require_dir = require('require-dir');
+var del = require('del');
+var runsequence = require('run-sequence');
 var dir = require_dir('./tasks');
 
-gulp.task('dist', ['_js', '_libs', '_less', '_jade', '_assets', '_index'], function() {
-	console.log("BUILD COMPLETE");
+gulp.task('clear', function() {
+
+	del.sync(['dist/']);
+
 });
 
-gulp.task('start', ['_js', '_libs', '_less', '_jade', '_assets', '_index', '_server'], function() {
-	
-	gulp.watch(['./src/**/*', '!./src/lib/**/*', '!./src/assets/**/*'], ['_semantic', '_js', '_libs', '_less', '_jade', '_assets', '_index']);
+gulp.task('watch', function(callback) {
 
-	// gulp.watch(css_src, ['css']);
-	// gulp.watch(html_src, ['html', 'gfx']);
-	// gulp.watch('src/**/*.jade', ['html']);
-	// gulp.watch('src/**/*.js', ['js']); //'jshint', 
-	// gulp.watch('src/**/*.+(png|gif|jpg|svg)', ['gfx']);
+	runsequence(
+		'_js',
+		'_jade',
+		'_scss',
+		'_js:watch',
+		'_jade:watch',
+		'_scss:watch',
+		'_server:frontend',
+		callback);
 
 });

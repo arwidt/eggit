@@ -1,0 +1,75 @@
+.poll {
+	@include full();
+	@extend %padding-top;
+	@extend %padding-bottom;
+	background-color: get-color(general, contrast-dark);
+	text-align: center;
+
+	.button {
+		margin: 10px;
+	}
+}
+
+
+.poll__header {
+	@extend %article-module-header;
+	margin: 0 0 10px;
+	color: get-color(general, lightest);
+}
+
+.poll__text {
+	color: get-color(general, lightest);
+	margin-top: 0;
+}
+
+.poll__show-results {
+	@extend %margin-top;
+	cursor: pointer;
+	display: block;
+	color: get-color(general, lightest);
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.poll__content {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.poll__content--answer-content {
+	padding: 0 span(.5);
+}
+
+.poll__amount {
+	text-align: center;
+	float: left;
+	padding: 15px 0;
+}
+
+.poll__amount--yes {
+	background-color: get-color(button, positive);
+}
+
+.poll__amount--no {
+	background-color: get-color(button, negative);
+}
+
+.poll__amount-text {
+	@include font-size-rem(1.8);
+	font-weight: get-font-weight(bold);
+	color: get-color(general, lightest);
+}
+
+.poll__total-amount {
+	@extend %small-paragraph;
+	color: get-color(general, lightest);
+	font-style: italic;
+	margin-top: 25px;
+	width: 100%;
+	float: left;
+}

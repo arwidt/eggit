@@ -1,0 +1,66 @@
+.byline {
+	position: relative;
+	height: 65px;
+}
+
+.byline__avatar {
+	border: get-border(byline);
+	border-radius: 100%;
+	overflow: hidden;
+	float: left;
+	height: 60px;
+	width: 60px;
+
+	img {
+		width: 115%;
+		max-width: none;
+		height: auto;	
+	}
+
+}
+
+.byline__content {
+	position: absolute;
+	padding-left: 10px;
+	float: left;
+	display: inline-block;
+	top: 10px;
+}
+
+.byline__name {
+	@extend %byline-name-text;
+	display: block;
+}
+
+.byline--thoughts-byline {
+	height: 95px;
+	margin-top: -50px; // Change to -65px if figcaption is reimplemented in feed
+
+	.main-article & {
+		
+		margin-top: -25px;
+
+		@include breakpoint($ipad-vertical) {
+			margin-top: -65px;
+		}
+	}
+}
+
+.byline--thoughts-byline__avatar {
+	height: 90px;
+	width: 90px;
+}
+
+.byline--thoughts-byline__content {
+	top: 35px;
+}
+
+.byline--teaser-byline {
+	float: left;
+}
+
+.byline--teaser-byline-enhanced {
+
+	margin-top: -45px;
+	padding-left: gutter(2);
+}

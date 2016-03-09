@@ -1,0 +1,70 @@
+.share-module {
+	display: none;
+	width: 60px;
+	height: 180px;
+	position: absolute;
+	margin-left: -80px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s ease-in;
+	
+	.not-loaded {
+		transition: top .5s ease-in;
+	}
+
+	&.stuck {
+		//position: fixed;
+	}
+
+	&.loaded {
+		opacity: 1;
+	}
+
+	@include breakpoint($ipad-horizontal + 1){
+		display: block;
+	}
+}
+
+.share-module__share-list {
+	@extend %unstyled-list;
+}
+
+.share-module__share-item {
+	width: 60px;
+	height: 60px;
+}
+
+.share-module__share-link {
+	@extend %full-size-click-area;
+	text-align: center;
+	line-height: 60px;
+
+	&:before {
+		font-size: 3.5rem;
+		vertical-align: middle;
+	}
+
+	&:hover {
+		text-decoration: none;
+
+		&:before {
+			color: darken(get-color(general, lightest), 5%);
+		}
+	}
+}
+
+.share-module__share-link--facebook {
+	@include icon('h', get-color(general, lightest));
+	background-color: get-color(social, facebook);
+	
+}
+
+.share-module__share-link--twitter {
+	@include icon('s', get-color(general, lightest));
+	background-color: get-color(social, twitter);
+}
+
+.share-module__share-link--email {
+	@include icon('l', get-color(general, lightest));
+	background-color: get-color(social, email);
+}

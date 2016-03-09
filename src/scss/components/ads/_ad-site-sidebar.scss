@@ -1,0 +1,7 @@
+.ad-site-sidebar {
+	display: none;
+
+	@include breakpoint($ipad-horizontal) {
+		display: block;
+	}
+}

@@ -1,0 +1,233 @@
+.main-article {
+	@extend %inner-card-content;
+	@extend %theme-border;
+	position: relative;
+	//border-bottom: get-border(general);
+	padding-bottom: 30px;
+
+	p:empty,
+	p:blank,
+	p:moz-only-whitespace{
+		display: none;
+	}
+}
+
+.main-article__header {
+	@extend %main-article-header;
+}
+
+.main-article__preamble {
+	@extend %preamble-paragraph;
+	padding-bottom: 10px;
+}
+
+.main-article__header-content {
+	@extend %padding-bottom;
+}
+
+.main-article__header {
+	@extend %margin-bottom;
+}
+
+.main-article__published-time {
+	@extend %small-paragraph;
+	font-weight: get-font-weight(bold);
+	display: block;
+	float: left;
+
+	@include breakpoint($ipad-vertical) {
+		display: inline;
+		float: none;
+		clear: none;
+	}
+}
+
+.main-article__updated-time {
+	@extend %small-paragraph;
+	font-style: italic;
+	margin-left: 0;
+	margin-bottom: 10px;
+	display: block;
+	float: left;
+	clear: left;
+
+	@include breakpoint($ipad-vertical) {
+		float: none;
+		clear: none;
+		margin-left: 30px;
+		display: inline;
+		margin-bottom: 0;
+	}
+}
+
+.main-article__published-time--footer {
+	@extend %normal-paragraph;
+	display: block;
+	margin-top: 10px;
+}
+
+.main-article__updated-time--footer {
+	@extend %normal-paragraph;
+	margin-left: 0;
+}
+
+.main-article__toolbar {
+
+	display: none;
+
+	@include breakpoint($ipad-horizontal) {
+		display: block;
+		border-top: get-border(general);
+		border-bottom: get-border(general);
+		padding: 10px 0;	
+	}
+	
+}
+
+.main-article__toolbar-list {
+	@extend %inline-block-list;
+}
+
+.main-article__toolbar-list-item {
+	@extend %toolbar-text;
+	color: get-color(theme, n55-news-articles);
+	padding: 15px 30px;
+	border-right: get-border(general);
+
+	a {
+		color: #656d78;
+		position: relative;
+		padding-left: 30px;
+
+		&.print-page {
+			@include icon('n', get-color(theme, n55-news-articles));
+
+			&:before {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				@include font-size-rem(1.7);
+			}
+		}
+
+		&.correct-article {
+			@include icon('m', get-color(theme, n55-news-articles));
+
+			&:before {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				@include font-size-rem(1.7);
+			}
+		}
+
+		&.alter-font-size {
+			&.bigger {
+				@include icon('a', get-color(theme, n55-news-articles));
+
+				&:before {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					@include font-size-rem(2);
+				}
+			}
+
+			&.smaller {
+				@include icon('p', get-color(theme, n55-news-articles));	
+
+				&:before {
+					position: absolute;
+					left: 0;
+					bottom: -1px;
+					@include font-size-rem(2);
+				}
+			}
+		}
+
+		&.comments-elevator {
+			@include icon('g', get-color(theme, n55-news-articles));
+
+			&:before {
+				position: absolute;
+				left: 0;
+				bottom: -2px;
+				@include font-size-rem(2);
+			}
+		}
+	}
+
+	&:last-child {
+		border-right: none;
+	}
+}
+
+.main-article__article-content {
+	padding-top: 20px;
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 0;
+		margin-bottom: 0; 
+	}
+
+	h2 {
+		@include font-size-rem(2.8);
+	}
+
+	h3 {
+		@include font-size-rem(2.4);
+	}
+
+	h4 {
+		@include font-size-rem(2);
+	}
+
+	h5, h6 {
+		@include font-size-rem(1.6);
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+
+	img {
+		width: auto;
+		max-width: 100%;
+	}
+}
+
+.main-article__footer {
+	@include full(no-gutters);
+
+	@include breakpoint($ipad-vertical) {
+		height: 65px;	
+	}
+	
+}
+
+.wp-caption {
+	max-width: 100%;
+}
+
+.wp-caption-text {
+	@extend %small-paragraph;
+	font-style: italic;
+
+	br {
+		display: none;
+	}
+}
+
+// WORDPRESS CLASSES
+
+// Wordpress alignment classes for images in content
+
+img.alignright { float: right; margin: 20px 0 20px 20px; }
+img.alignleft { float: left; margin: 20px 20px 20px 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+

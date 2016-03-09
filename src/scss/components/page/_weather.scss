@@ -1,0 +1,9 @@
+.page-weather {
+	@include span(6);
+	float: none;
+
+	iframe {
+		background-color: #fff;
+		padding: 20px;
+	}
+}

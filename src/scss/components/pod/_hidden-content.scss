@@ -1,0 +1,21 @@
+.hidden-content {
+	margin-bottom: 30px;
+}
+
+.hidden-content__container {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.hidden-content__text {
+	display: none;
+	text-align: start;
+	margin: 20px 0;
+	padding: 20px 0 10px;
+	border-top: get-border(general);
+	border-bottom: get-border(general);
+
+	&.active {
+		display: block;
+	}
+}

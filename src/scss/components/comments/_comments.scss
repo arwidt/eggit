@@ -1,0 +1,21 @@
+.comments {
+	@include full(no-gutters);
+	@extend %inner-card-padding;
+}
+
+.comments__header {
+	@extend %full-width-card-content;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 15px 0;
+	box-shadow: inset 0px 0px 0px 1px get-color(general, light);
+	background-color: get-color(state, background-hover);
+}
+
+.comments__header-text {
+	@extend %small-paragraph;
+	@extend %medium-weight-paragraph;
+	display: inline-block;
+	padding-left: 20px;
+	width: 50%;
+}

@@ -1,0 +1,82 @@
+/*doc
+---
+title: _ad-layout.scss
+name: _ad-layout.scss
+category: Layouts
+---
+
+Layout for site ads.
+
+*/
+
+.ad-site-top,
+.ad-site-bottom {
+	
+	@include breakpoint($lg) {
+		float: left;
+		max-width: none;
+		min-width: 1000px;
+	}
+}
+
+.ad-site-feed {
+	@include full(no-gutters);
+}
+
+.ad__top-ad--panorama {
+	display: none;
+	line-height: 0;
+	
+	@include breakpoint($show-ad-site-panorama) {
+		display: block;
+	}
+
+}
+
+.ad__top-ad--mid {
+	display: none;
+	line-height: 0;
+	
+	@include breakpoint($show-ad-site-top ($show-ad-site-panorama - 1)) {
+		display: block;
+	}
+
+}
+
+.ad-site-side {
+	
+	display: none;
+
+	@include breakpoint($show-ad-site-side) {
+		display: block;
+		width: 250px;
+		position: relative;
+		float: right;
+		margin-left: 10px;	
+	}
+
+	img {
+		max-width: none;
+	}
+}
+
+.ad__side {
+	position: relative;
+	margin: 20px 0;
+
+	&.first {
+		margin-top: 0;
+	}
+}
+
+.ad__top {
+	@include breakpoint(max-width $hide-ad-top-mobile){
+		width: 320px;
+		margin: 0 auto;
+	}
+}
+
+.ad__top-ad--mobile {
+	width: 320px;
+	margin: 0 auto;
+}

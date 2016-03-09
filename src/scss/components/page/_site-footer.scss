@@ -1,0 +1,164 @@
+.site-footer {
+	   
+}
+
+.site-footer__main-content {
+
+	p {
+		margin-top: 0;
+    	margin-bottom: 30px;	
+	}
+}
+
+.site-footer__address {
+	text-align: center;
+
+	@include breakpoint($ipad-vertical) {
+		text-align: start;
+	}
+}
+
+.site-footer__contact {
+	text-align: center;
+
+	@include breakpoint($ipad-vertical) {
+		text-align: start;
+	}
+}
+
+.site-footer__about {
+	text-align: center;
+
+	@include breakpoint($ipad-vertical) {
+		text-align: start;
+	}
+}
+
+.site-footer__logo {
+	display: inline;
+	margin-bottom: 30px;
+	max-width: 300px;
+
+	@include breakpoint($ipad-vertical) {
+		display: block;
+		max-width: 100%;
+		text-align: start;
+	}
+}
+
+.site-footer__header {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.site-footer__address-part {
+	display: block;
+}
+
+.site-footer__footbrow {
+	@include full(no-gutters);
+	padding: 20px 0;
+	background-color: get-color(state, background-hover);
+}
+
+.site-footer__credit {
+	@include span(6);
+	@extend %super-small-paragraph;
+	margin-top: 0;
+	text-align: center;
+
+	@include breakpoint($ipad-vertical) {
+		@include span(1);
+		float: left;
+		text-align: start;
+		margin-bottom: 0;
+			
+	}
+
+}
+
+.site-footer__credit-header {
+	display: block;
+	font-weight: get-font-weight(bold);
+}
+
+.site-footer__elevator {
+	@extend %small-paragraph;
+	color: inherit;
+	cursor: pointer;
+	font-weight: get-font-weight(bold);
+	display: inline-block;
+	float: right;
+	top: 7px;
+	position: relative;
+	padding-left: 25px;
+
+	@include icon('e', get-color(theme, n55-news-articles));
+	&:before {
+		position: absolute;
+		left: 0;
+		bottom: 1px;
+		@include font-size-rem(1.5);
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.site-footer__social-container {
+	@extend %container-standard;
+}
+
+.site-footer__social-mobile {
+	display: none;
+
+	@include breakpoint($ipad-vertical) {
+		display: block;
+
+		.site-footer__social {
+			@include span(3);
+			background: url('/wp-content/themes/route55/img/footer/facebook-push.png') left 10px top no-repeat;
+			padding-left: 160px;
+			height: 150px;
+
+			h4 {
+				margin-bottom: 0px;
+			}
+
+			p {
+				@extend %small-paragraph;
+				font-style: italic;
+				margin: 0 0 10px 0;
+			}
+
+			.teaser--facebook-teaser__like-buttons {
+				position: static !important;
+				text-align: left;
+			}
+		}
+
+		.site-footer__mobile {
+			@include span(3);
+
+			height: 150px;
+			background: url('/wp-content/themes/route55/img/footer/mobile-push.png') left top no-repeat;
+			padding-left: 180px;
+
+			h4 {
+				margin-bottom: 0px;
+			}
+
+			p {
+				@extend %small-paragraph;
+				font-style: italic;
+				margin: 0 0 10px 0;
+			}
+
+			.teaser--facebook-teaser__like-buttons {
+				position: static !important;
+				text-align: left;
+			}
+		}
+	}
+}
